@@ -265,6 +265,7 @@ body
     margin-top: 70px
   &__info
     display: none
+
     &-btn
       width: 26px
       height: 26px
@@ -353,6 +354,9 @@ body
       width: 51px
       height: 50px
       position: relative
+      transition: all .3s ease-in-out
+      &:hover
+        cursor: pointer
       &:not(:last-child)
         margin-right: 17px
       &._lock, &._done
@@ -373,32 +377,56 @@ body
           background: url("../img/quests/icons/done.png") no-repeat 0 0/contain
       &._current
         transform: scale(1.3)
-      &:nth-child(1)
+      &.quest1
         background: url("../img/quests/icons/quest.png") no-repeat 0 0/contain
         &._done, &._active
           background: url("../img/quests/icons/quest-done.png") no-repeat 0 0/contain
 
-      &:nth-child(2)
+      &.quest2
         background: url("../img/quests/icons/quest.png") no-repeat 0 0/contain
         &._done, &._active
           background: url("../img/quests/icons/quest-done.png") no-repeat 0 0/contain
 
-      &:nth-child(3)
+      &.quest3
         background: url("../img/quests/icons/quest.png") no-repeat 0 0/contain
         &._done, &._active
           background: url("../img/quests/icons/quest-done.png") no-repeat 0 0/contain
 
-      &:nth-child(4)
+      &.quest4
         background: url("../img/quests/icons/quest.png") no-repeat 0 0/contain
         &._done, &._active
           background: url("../img/quests/icons/quest-done.png") no-repeat 0 0/contain
 
-      &:nth-child(5)
+      &.quest5
         background: url("../img/quests/icons/quest.png") no-repeat 0 0/contain
         &._done, &._active
           background: url("../img/quests/icons/quest-done.png") no-repeat 0 0/contain
 
-      &:nth-child(6)
+      &.quest6
+        background: url("../img/quests/icons/quest.png") no-repeat 0 0/contain
+        &._done, &._active
+          background: url("../img/quests/icons/quest-done.png") no-repeat 0 0/contain
+      &.quest7
+        background: url("../img/quests/icons/quest.png") no-repeat 0 0/contain
+        &._done, &._active
+          background: url("../img/quests/icons/quest-done.png") no-repeat 0 0/contain
+      &.quest8
+        background: url("../img/quests/icons/quest.png") no-repeat 0 0/contain
+        &._done, &._active
+          background: url("../img/quests/icons/quest-done.png") no-repeat 0 0/contain
+      &.quest9
+        background: url("../img/quests/icons/quest.png") no-repeat 0 0/contain
+        &._done, &._active
+          background: url("../img/quests/icons/quest-done.png") no-repeat 0 0/contain
+      &.quest10
+        background: url("../img/quests/icons/quest.png") no-repeat 0 0/contain
+        &._done, &._active
+          background: url("../img/quests/icons/quest-done.png") no-repeat 0 0/contain
+      &.quest11
+        background: url("../img/quests/icons/quest.png") no-repeat 0 0/contain
+        &._done, &._active
+          background: url("../img/quests/icons/quest-done.png") no-repeat 0 0/contain
+      &.quest12
         background: url("../img/quests/icons/quest.png") no-repeat 0 0/contain
         &._done, &._active
           background: url("../img/quests/icons/quest-done.png") no-repeat 0 0/contain
@@ -438,177 +466,200 @@ body
       &__img
         min-height: 730px
         position: relative
-        .glitch__layers
-          min-width: 2050px
-          max-width: 2050px
-          height: 983px
-          left: -260px
-          top: -200px
-        .glitch__layer
-          background: url("../img/quests/slide2/pers.png") no-repeat 0 0/contain
-          margin-left: 50px
-          //display: none
-          opacity: 0
-          &:nth-child(1)
-            transform: translateX(-5%)
-            animation: none
-          &:nth-child(2)
-            transform: translateX(3%) translateY(3%)
-            animation: none
-          &:nth-child(3)
-            transform: translateX(5%)
-            animation: none
-      &:nth-child(1)
+      .glitch__layers
+        min-width: 2050px
+        max-width: 2050px
+        height: 983px
+        left: 0
+        top: 0
+      .glitch__layer
+        margin-left: 50px
+        //display: none
+        opacity: 0
+        &:nth-child(1)
+          transform: translateX(-5%)
+          animation: none
+        &:nth-child(2)
+          transform: translateX(3%) translateY(3%)
+          animation: none
+        &:nth-child(3)
+          transform: translateX(5%)
+          animation: none
+      .glitch__layer.quest1
+        background-size: 100% 100%
+        width: 660px
+        height: 780px
+        left: 320px
+        top: 150px
+
+      .glitch__layer.quest2
+        background-size: 100% 100%
+        width: 1210px
+        height: 730px
+        left: 0
+        top: 100px
+
+      .glitch__layer.quest3
+        background-size: 100% 100%
+        width: 1065px
+        height: 730px
+        left: 160px
+        top: 160px
+      .glitch__layer.quest4
+        background-size: 100% 100%
+        width: 1200px
+        height: 730px
+        left: -10px
+        top: 100px
+      .glitch__layer.quest5
+        background-size: 100% 100%
+        width: 1400px
+        height: 885px
+        left: -100px
+        top: 0
+      .glitch__layer.quest6
+        background-size: 100% 100%
+        width: 1207px
+        height: 735px
+        left: 0
+        top: 100px
+      .glitch__layer.quest7
+        background-size: 100% 100%
+        width: 1213px
+        height: 730px
+        left: 0
+        top: 100px
+      .glitch__layer.quest8
+        background-size: 100% 100%
+        width: 700px
+        height: 730px
+        left: 330px
+        top: 150px
+      .glitch__layer.quest9
+        width: 1210px
+        height: 730px
+        left: 0
+        top: 100px
+      .glitch__layer.quest10
+        width: 730px
+        height: 730px
+        top: 140px
+        left: 260px
+      .glitch__layer.quest11
+        width: 720px
+        height: 730px
+        left: 300px
+        top: 130px
+      .glitch__layer.quest12
+        background-size: 100% 100%
+        width: 1170px
+        height: 770px
+        left: 0px
+        top: 100px
+      //&:nth-child(1)
+      //  &::before
+      //    //left: 0
+      //    //top: 0px
+      //    left: 280px
+      //    top: 50px
+      //    width: 1170px
+      //    height: 770px
+      //    background: url("../img/quests/slide1/slide-bg.png") no-repeat 0 0/cover
+      //    background-size: 100% 100%
+      //  .slide__img
+      //    background: url("../img/quests/slide1/pers.png") no-repeat 0 0/contain
+      //    background-size: 100% 100%
+      //    min-width: 1200px
+      //    margin-left: -160px
+      //  .glitch__layer.next
+      //    background-size: 100% 100%
+      //    width: 900px
+      //    height: 730px
+      //    left: 450px
+      //    top: auto
+      //    bottom: 20px
+      //  .glitch__layer.prev
+      //    background-size: 100% 100%
+      //    width: 1150px
+      //    height: 730px
+      //    left: 300px
+      //    top: auto
+      //    bottom: 70px
+      //&:nth-child(1)
+      &.quest1
         &::before
-          //left: 0
-          //top: 0px
-          left: 280px
-          top: 50px
-          width: 1170px
-          height: 770px
           background: url("../img/quests/slide1/slide-bg.png") no-repeat 0 0/cover
-          background-size: 100% 100%
-        .slide__img
-          background: url("../img/quests/slide1/pers.png") no-repeat 0 0/contain
-          background-size: 100% 100%
-          min-width: 1200px
-          margin-left: -160px
-        .glitch__layer.next
-          background-size: 100% 100%
-          width: 900px
-          height: 730px
-          left: 450px
-          top: auto
-          bottom: 20px
-        .glitch__layer.prev
-          background-size: 100% 100%
-          width: 1150px
-          height: 730px
-          left: 300px
-          top: auto
-          bottom: 70px
-      &:nth-child(2)
-        &::before
-          background: url("../img/quests/slide2/slide-bg.png") no-repeat 0 0/cover
           background-size: 100% 100%
           width: 880px
           height: 620px
           left: 300px
           top: 120px
         .slide__img
-          background: url("../img/quests/slide2/pers.png") no-repeat 0 0/contain
+          background: url("../img/quests/slide1/pers.png") no-repeat 0 0/contain
           min-width: 660px
           margin-left: 130px
           top: 50px
         .slide__info
           margin-left: -50px
-        .glitch__layer.next
-          background-size: 100% 100%
-          width: 1210px
-          height: 730px
-          left: -150px
-          top: auto
-          bottom: 90px
-        .glitch__layer.prev
-          background-size: 100% 100%
-          width: 1170px
-          height: 770px
-          left: -120px
-          top: auto
-          bottom: 40px
-      &:nth-child(3)
+        .slide__title
+          padding-bottom: 0
+
+      &.quest2
         &::before
-          background: url("../img/quests/slide3/slide-bg.png") no-repeat 0 0/cover
+          background: url("../img/quests/slide2/slide-bg.png") no-repeat 0 0/cover
           background-size: 100% 100%
           width: 1170px
           height: 760px
           left: 260px
           top: 90px
         .slide__img
-          background: url("../img/quests/slide3/pers.png") no-repeat 0 0/contain
+          background: url("../img/quests/slide2/pers.png") no-repeat 0 0/contain
           min-width: 1210px
           margin-left: -170px
-        .glitch__layer.next
-          background-size: 100% 100%
-          width: 1065px
-          height: 730px
-          left: 320px
-          top: auto
-          bottom: 0
-        .glitch__layer.prev
-          background-size: 100% 100%
-          width: 660px
-          height: 780px
-          left: 460px
-          top: auto
-          bottom: -50px
-      &:nth-child(4)
+        .slide__info-prize
+          gap: 7px
+      &.quest3
         &::before
-          background: url("../img/quests/slide4/slide-bg.png") no-repeat 0 0/cover
+          background: url("../img/quests/slide3/slide-bg.png") no-repeat 0 0/cover
           background-size: 100% 100%
           width: 885px
           height: 572px
           left: 235px
           top: 140px
         .slide__img
-          background: url("../img/quests/slide4/pers.png") no-repeat 0 0/contain
+          background: url("../img/quests/slide3/pers.png") no-repeat 0 0/contain
           min-width: 1065px
           margin-left: -60px
           top: 60px
         .slide__info
           margin-left: -265px
-        .glitch__layer.prev
-          background-size: 100% 100%
-          width: 1210px
-          height: 730px
-          left: 100px
-          top: auto
-          bottom: 90px
-        .glitch__layer.next
-          background-size: 100% 100%
-          width: 1200px
-          height: 730px
-          left: 70px
-          top: auto
-          bottom: 90px
-      &:nth-child(5)
+
+      &.quest4
         &::before
-          background: url("../img/quests/slide5/slide-bg.png") no-repeat 0 0/cover
+          background: url("../img/quests/slide4/slide-bg.png") no-repeat 0 0/cover
           background-size: 100% 100%
           width: 1220px
           height: 770px
           left: 230px
           top: 40px
         .slide__img
-          background: url("../img/quests/slide5/pers.png") no-repeat 0 0/contain
+          background: url("../img/quests/slide4/pers.png") no-repeat 0 0/contain
           min-width: 1200px
           margin-left: -160px
         .slide__info
           margin-left: -300px
-        .glitch__layer.prev
-          background-size: 100% 100%
-          width: 1060px
-          height: 730px
-          left: 260px
-          top: auto
-          bottom: 20px
-        .glitch__layer.next
-          background-size: 100% 100%
-          width: 1400px
-          height: 885px
-          left: 30px
-          top: auto
-          bottom: 10px
-      &:nth-child(6)
+        .slide__info-prize
+          gap: 7px
+      &.quest5
         &::before
-          background: url("../img/quests/slide6/slide-bg.png") no-repeat 0 0/cover
+          background: url("../img/quests/slide5/slide-bg.png") no-repeat 0 0/cover
           background-size: 100% 100%
           width: 910px
           height: 380px
           left: 190px
           bottom: -55px
         .slide__img
-          background: url("../img/quests/slide6/pers.png") no-repeat 0 0/contain
+          background: url("../img/quests/slide5/pers.png") no-repeat 0 0/contain
           min-width: 1400px
           min-height: 885px
           margin-left: -270px
@@ -616,69 +667,78 @@ body
           top: -105px
         .slide__info
           margin-left: -390px
-        .glitch__layer.prev
-          background-size: 100% 100%
-          width: 1200px
-          height: 730px
-          left: 260px
-          top: auto
-          bottom: -40px
-        .glitch__layer.next
-          background-size: 100% 100%
-          width: 1207px
-          height: 735px
-          left: 220px
-          top: auto
-          bottom: -10px
-      &:nth-child(7)
+        .slide__title
+          margin-bottom: -6px
+      &.quest6
         &::before
-          background: url("../img/quests/slide7/slide-bg.png") no-repeat 0 0/cover
+          background: url("../img/quests/slide6/slide-bg.png") no-repeat 0 0/cover
           background-size: 100% 100%
           width: 1163px
           height: 769px
           left: 300px
           top: 70px
         .slide__img
-          background: url("../img/quests/slide7/pers.png") no-repeat 0 0/contain
+          background: url("../img/quests/slide6/pers.png") no-repeat 0 0/contain
           min-width: 1207px
           margin-left: -180px
         .slide__info
           margin-left: -287px
-        .glitch__layer.next
-          background-size: 100% 100%
-          width: 1213px
-          height: 730px
-          left: 200px
-          top: auto
-          bottom: 50px
-        .glitch__layer.prev
-          background-size: 100% 100%
-          width: 1400px
-          height: 885px
-          left: 30px
-          top: auto
-          bottom: 10px
-      &:nth-child(8)
+        .slide__info-prize
+          gap: 7px
+      &.quest7
         &::before
-          background: url("../img/quests/slide8/slide-bg.png") no-repeat 0 0/cover
+          background: url("../img/quests/slide7/slide-bg.png") no-repeat 0 0/cover
           background-size: 100% 100%
           width: 1213px
           height: 789px
           left: 240px
           bottom: -20px
         .slide__img
-          background: url("../img/quests/slide8/pers.png") no-repeat 0 0/contain
+          background: url("../img/quests/slide7/pers.png") no-repeat 0 0/contain
           min-width: 1207px
           margin-left: -180px
         .slide__info
           margin-left: -287px
-        .glitch__layer.prev
+        .slide__info-prize
+          gap: 7px
+      &.quest8
+        &::before
+          background: url("../img/quests/slide8/slide-bg.png") no-repeat 0 0/cover
           background-size: 100% 100%
-          width: 1207px
-          height: 735px
-          left: 200px
-          top: auto
-          bottom: 20px
+          width: 1005px
+          height: 681px
+          left: 150px
+          bottom: 60px
+        .slide__img
+          background: url("../img/quests/slide8/pers.png") no-repeat 0 0/contain
+          min-width: 697px
+          height: 649px
+          margin-left: 120px
+          top: 40px
+        .slide__info
+          margin-left: -77px
+
+      &.quest9
+        &::before
+          background: url("../img/quests/slide9/slide-bg.png") no-repeat 0 0/cover
+          background-size: 100% 100%
+          width: 1282px
+          height: 681px
+          left: 170px
+          bottom: 40px
+        .slide__img
+          background: url("../img/quests/slide9/pers.png") no-repeat 0 0/contain
+          min-width: 1210px
+          margin-left: -180px
+        .slide__info
+          margin-left: -290px
+        .glitch__layer.prev
+            background-size: 100% 100%
+            width: 700px
+            height: 730px
+            left: 530px
+            top: auto
+            bottom: 0px
         .glitch__layer.next
           background-size: 100% 100%
           width: 700px
@@ -686,102 +746,57 @@ body
           left: 530px
           top: auto
           bottom: 0px
-      &:nth-child(9)
-        &::before
-          background: url("../img/quests/slide9/slide-bg.png") no-repeat 0 0/cover
-          background-size: 100% 100%
-          width: 1005px
-          height: 681px
-          left: 150px
-          bottom: 60px
-        .slide__img
-          background: url("../img/quests/slide9/pers.png") no-repeat 0 0/contain
-          min-width: 697px
-          height: 649px
-          margin-left: 120px
-          top: 40px
-        .slide__info
-          margin-left: -77px
-        .glitch__layer.prev
-          background-size: 100% 100%
-          width: 1213px
-          height: 730px
-          left: -120px
-          top: auto
-          bottom: 90px
-      &:nth-child(10)
+        .slide__info-prize
+          gap: 7px
+      &.quest10
         &::before
           background: url("../img/quests/slide10/slide-bg.png") no-repeat 0 0/cover
           background-size: 100% 100%
-          width: 1282px
-          height: 681px
-          left: -80px
-          bottom: 40px
+          width: 980px
+          height: 700px
+          left: 150px
+          bottom: 60px
         .slide__img
           background: url("../img/quests/slide10/pers.png") no-repeat 0 0/contain
-          min-width: 1210px
-          margin-left: -180px
-        .slide__info
-          margin-left: -290px
-      .glitch__layer.prev
-          background-size: 100% 100%
-          width: 700px
-          height: 730px
-          left: 530px
-          top: auto
-          bottom: 0px
-      .glitch__layer.next
-        background-size: 100% 100%
-        width: 700px
-        height: 730px
-        left: 530px
-        top: auto
-        bottom: 0px
-      &:nth-child(11)
-        &::before
-          background: url("../img/quests/slide11/slide-bg.png") no-repeat 0 0/cover
-          background-size: 100% 100%
-          width: 840px
-          height: 600px
-          left: -50px
-          bottom: 110px
-        .slide__img
-          background: url("../img/quests/slide11/pers.png") no-repeat 0 0/contain
           min-width: 729px
           margin-left: 50px
           bottom: -50px
         .slide__info
           margin-left: -39px
-      &:nth-child(12)
+        .slide__title
+          margin-bottom: -6px
+      &.quest11
         &::before
-          background: url("../img/quests/slide12/slide-bg.png") no-repeat 0 0/cover
+          background: url("../img/quests/slide11/slide-bg.png") no-repeat 0 0/cover
           background-size: 100% 100%
           width: 980px
           height: 585px
-          left: -135px
-          bottom: 135px
+          left: 115px
+          bottom: 155px
         .slide__img
-          background: url("../img/quests/slide12/pers.png") no-repeat 0 0/contain
+          background: url("../img/quests/slide11/pers.png") no-repeat 0 0/contain
           min-width: 720px
           margin-left: 105px
           bottom: -10px
         .slide__info
           margin-left: -85px
-      &:nth-child(13)
+      &.quest12
         &::before
-          background: url("../img/quests/slide13/slide-bg.png") no-repeat 0 0/cover
+          background: url("../img/quests/slide12/slide-bg.png") no-repeat 0 0/cover
           background-size: 100% 100%
           width: 1282px
           height: 681px
-          left: -55px
-          bottom: 135px
+          left: 185px
+          bottom: 110px
         .slide__img
-          background: url("../img/quests/slide13/pers.png") no-repeat 0 0/contain
+          background: url("../img/quests/slide12/pers.png") no-repeat 0 0/contain
           min-width: 1210px
           margin-left: -175px
           bottom: 5px
         .slide__info
           margin-left: -295px
+        .slide__info-prize
+          gap: 7px
       &__info
         max-width: 360px
         width: 100%
@@ -808,10 +823,47 @@ body
           background: url("../img/quests/quest-prize-bg.png") no-repeat 0 0/cover
           background-size: 100% 100%
           padding: 13px 0 12px 0
+          display: flex
+          flex-direction: column
+          align-items: center
+          justify-content: center
+          gap: 2px
+          &-title
+            font-family: $font-press-start2P
+            text-transform: uppercase
+            text-align: center
+            color: $white
+            font-size: 33px
+            transform: rotate(-2deg)
+            &:first-child
+              font-size: 15px
+            &::before
+              content: attr(data-decor)
+              display: block
+              font-family: inherit
+              font-size: inherit
+              color: transparent
+              -webkit-text-stroke: 1px $white
+              position: absolute
+              left: 50%
+              top: 50%
+              transform: translate(-46%, -50%)
+          &-subtitle
+            font-family: $font-handjet-light
+            font-size: 20px
+            line-height: 16px
+            text-align: center
+            color: $white
+            transform: rotate(-2deg)
+
+            &:last-child
+              text-transform: uppercase
+
           &-item
             color: $white
             text-align: center
             transform: rotate(-2deg)
+
             &:nth-child(1),&:nth-child(3)
               font-family: $font-press-start2P
               text-transform: uppercase
@@ -827,7 +879,7 @@ body
                 top: 50%
                 transform: translate(-46%, -50%)
             &:nth-child(2),&:nth-child(4)
-              font-family: $font-handjet-reg
+              font-family: $font-handjet-light
               //font-family: $font-handjet-med
             &:nth-child(1)
               font-size: 15px
@@ -838,10 +890,8 @@ body
             &:nth-child(3)
               font-size: 33px
               margin-top: 5px
-            &:nth-child(4)
-              text-transform: uppercase
-              font-size: 20px
-              line-height: 16px
+
+
 
         &-bottom
           width: 285px
@@ -914,6 +964,32 @@ body
             &::before
               background: url("../img/buttons/btn-quest-hover-bg.png") no-repeat 0 0/cover
 
+      &.glitch
+        .slide
+          &__info
+            .glitch__layers
+              max-width: 120%
+              min-width: 120%
+              left: -10%
+              height: 100%
+              pointer-events: none
+            .slide-info-glitch
+              display: block
+              background: url("../img/quests/info-glitch-bg.png") no-repeat 0 0/cover
+              background-size: 100% 100%
+              margin-left: 15px
+              &:nth-child(1)
+                animation: glitch-anim-1 2s linear alternate
+              &:nth-child(2)
+                animation: glitch-anim-2 2.3s -.8s linear alternate
+              &:nth-child(3)
+                animation: glitch-anim-flash 1s linear
+              &:nth-child(4)
+                animation: glitch-anim-1 2s linear alternate
+              &:nth-child(5)
+                animation: glitch-anim-2 2.3s -.8s linear alternate
+              &:nth-child(6)
+                animation: glitch-anim-flash 1s linear
       &__progress
         width: 530px
         height: 86px
@@ -980,20 +1056,21 @@ body
         //font-family: $font-handjet-reg
         text-transform: uppercase
         font-size: 20px
-        padding-bottom: 15px
+        //padding-bottom: 15px
         &-decor
           font-size: 27px
+          line-height: 23px
           //font-family: $font-handjet-bold
           font-family: $font-handjet-med
           letter-spacing: 0.05em
           position: relative
-          margin-bottom: 6px
+          margin-bottom: 9px
           &::before, &::after
             content: ""
             display: block
             height: 1px
             position: absolute
-            bottom: -3px
+            bottom: -6px
             left: 0
             background: $white
           &::before
@@ -1154,6 +1231,8 @@ body
           cursor: default
   &__item
     display: none
+    max-height: 308px
+    overflow: auto
   &__head
     display: flex
     width: 100%
@@ -1195,7 +1274,8 @@ body
       &:nth-child(1), &:nth-child(4)
         font-size: 23px
         line-height: 24px
-        font-family: $font-handjet-med
+        //font-family: $font-handjet-med
+        font-family: $font-handjet-reg
       &:nth-child(2), &:nth-child(3)
         font-size: 20px
         line-height: 24px
@@ -1251,7 +1331,18 @@ body
     right: -160px
     top: 150px
 
-
+.prize
+  display: flex
+  flex-direction: column
+  align-items: center
+  &__subtitle
+    font-size: 24px
+    line-height: 24px
+    color: $white
+    font-family: $font-handjet-light
+    text-transform: uppercase
+    max-width: 590px
+    text-align: center
 
 
 .popups
@@ -1291,7 +1382,16 @@ body
       animation: glitch-anim-2 2.3s -.8s infinite linear alternate
     &:nth-child(3)
       transform: translateX(5%)
-      animation: glitch-anim-flash 1s infinite linear
+      animation: glitch-anim-flash 1.2s infinite linear
+    &:nth-child(4)
+      transform: translateX(-6%)
+      animation: glitch-anim-1 2.5s infinite linear alternate
+    &:nth-child(5)
+      transform: translateX(-10%) translateY(3%)
+      animation: glitch-anim-2 2s -.6s infinite linear alternate
+    &:nth-child(6)
+      transform: translateX(1%)
+      animation: glitch-anim-flash .9s infinite linear
 
 
 
@@ -1383,3 +1483,4 @@ body
     width: 0
   to
     width: 100%
+
