@@ -291,10 +291,12 @@ document.addEventListener("DOMContentLoaded", () =>{
             const persMob = new Image();
             const slideBg = new Image();
             const slideBgMob = new Image();
+            const mainBtn = new Image();
             pers.src = `./img/quests/slide${i}/pers.png`;
             persMob.src = `./img/quests/slide${i}/pers-mob.png`;
             slideBg.src = `./img/quests/slide${i}/slide-bg.png`;
             slideBgMob.src = `./img/quests/slide${i}/slide-bg-mob.png`;
+            mainBtn.src = `./img/buttons/btn-hover-bg.png`;
         }
     }
 
