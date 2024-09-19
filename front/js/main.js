@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () =>{
             });
             if (layer.parentElement.parentElement.classList[0] !== "slide__info") {
                 layer.classList.add(`quest${index}`);
-                layer.style.background = `url("../img/quests/slide${index}/pers.png") no-repeat 0 0/contain`;
+                layer.style.background = `url("./img/quests/slide${index}/pers.png") no-repeat 0 0/contain`;
             } else {
                 layer.classList.add("slide-info-glitch");
             }
