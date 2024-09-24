@@ -2055,15 +2055,23 @@ body
           margin-bottom: 20px
           &::before
             white-space: normal
-
         &-body
           display: flex
           justify-content: center
-          align-items: center
+          align-items: flex-start
           width: 345px
           background: $blue url("../img/table/popup-table-bg.png") no-repeat 0 0/cover
           background-size: 100% 100%
           padding: 15px
+          max-height: 475px
+          overflow-y: auto
+          overflow-x: hidden
+        &-scroll-wrap
+          display: flex
+          justify-content: center
+          align-items: center
+
+
         &-item
           width: 150px
           color: $white
