@@ -1595,6 +1595,25 @@ body
     background: url("../img/table/table-row-bg.png") no-repeat 0 0/cover
     background-size: 100% 100%
     margin-top: 5px
+    &.gold, &.silver, &.bronze
+      position: relative
+      &::before
+        content: ""
+        display: block
+        width: 24px
+        height: 24px
+        position: absolute
+        top: 0
+        left: 8px
+    &.gold
+      &::before
+        background: url("../img/table/gold.png") no-repeat 0 0/contain
+    &.silver
+      &::before
+        background: url("../img/table/silver.png") no-repeat 0 0/contain
+    &.bronze
+      &::before
+        background: url("../img/table/bronze.png") no-repeat 0 0/contain
     &-item
       color: $white
       &:nth-child(1)
