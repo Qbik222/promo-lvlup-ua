@@ -445,6 +445,9 @@ document.addEventListener("DOMContentLoaded", () =>{
     document.querySelector(".dark-btn").addEventListener("click", () =>{
         document.body.classList.toggle("dark")
     })
+    document.querySelector(".en-lng").addEventListener("click", () =>{
+        document.querySelector(".fav-page").classList.toggle("en")
+    })
 
     const donePopupBtn = document.querySelector(".done-popup")
 

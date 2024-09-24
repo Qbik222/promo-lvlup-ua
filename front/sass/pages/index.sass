@@ -33,7 +33,7 @@ body
 ._opacity
   opacity: 1 !important
 
-.week1, .week2, .done-popup, .dark-btn
+.week1, .week2, .done-popup, .dark-btn, .en-lng
   position: fixed
   top: 0
   left: 0
@@ -49,6 +49,8 @@ body
   top: 50px
 .dark-btn
   top: 75px
+.en-lng
+  top: 100px
 
 ._overflow-hidden
   overflow: hidden !important
@@ -2238,6 +2240,30 @@ body.dark
       background: url("../img/bottom/bottom-bg-tab-dark.png") no-repeat 50% 0/cover
     @media screen and (max-width: 600px)
       background: url("../img/bottom/bottom-bg-mob-dark.png") no-repeat 50% 0/cover
+
+
+//en styles
+
+.bottom
+  .ua
+    display: block
+  .en
+    display: none
+
+.fav-page.en
+  .promo
+    background: url("../img/promo/promo-main-en.png") no-repeat 0 0/contain
+    @media screen and (max-width: 1050px)
+      background: url("../img/promo/promo-main-tab-en.png") no-repeat 0 0/contain
+    @media screen and (max-width: 600px)
+      background: url("../img/promo/promo-main-mob-en.jpg") no-repeat 0 0/contain
+  .bottom
+    &__pers
+      margin-bottom: -10px
+      .en
+        display: block
+      .ua
+        display: none
 
 
 
