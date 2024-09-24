@@ -69,12 +69,25 @@
         width: 51px
         height: 50px
         user-select: none
+        transition: background .4s ease-in-out
         &:hover
           cursor: pointer
         &._current
           transform: scale(1.3)
           &:hover
             cursor: default
+          &:nth-child(1)
+            background: url("../img/prize/slide1/icon-prize-hover.png") 0 0/contain
+          &:nth-child(2)
+            background: url("../img/prize/slide2/icon-prize-hover.png") 0 0/contain
+          &:nth-child(3)
+            background: url("../img/prize/slide3/icon-prize-hover.png") 0 0/contain
+          &:nth-child(4)
+            background: url("../img/prize/slide4/icon-prize-hover.png") 0 0/contain
+          &:nth-child(5)
+            background: url("../img/prize/slide5/icon-prize-hover.png") 0 0/contain
+          &:nth-child(6)
+            background: url("../img/prize/slide6/icon-prize-hover.png") 0 0/contain
         &:nth-child(1)
           background: url("../img/prize/slide1/icon-prize.png") 0 0/contain
         &:nth-child(2)
@@ -321,8 +334,6 @@
     //  z-index: 3
     &__btn
       z-index: 3
-    &__info
-      background: #2A62EB
     &__list
       margin-top: 20px
       gap: 10px
