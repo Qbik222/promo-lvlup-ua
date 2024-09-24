@@ -1,35 +1,78 @@
 document.addEventListener("DOMContentLoaded", () =>{
     let week = localStorage.getItem("week") ? parseInt(localStorage.getItem("week")) : 1;
-    console.log(week)
+
+    const infoSlidesMob = document.querySelectorAll(".slide__info-mob")
+    const infoSlidesMobPopup = document.querySelectorAll(".slide__info-bottom")
+    const slideBtnsLeft = document.querySelectorAll(".slide__move-left")
+    const slideBtnsRight = document.querySelectorAll(".slide__move-right")
+
+    infoSlidesMob.forEach((item, indexItem) =>{
+        item.addEventListener("click", () =>{
+            infoSlidesMobPopup.forEach((popup, indexPopup)=>{
+                if (indexItem === indexPopup){
+                    popup.classList.toggle("_active")
+                    popup.parentElement.parentElement.parentElement.classList.toggle("_active")
+                    item.classList.toggle("_active")
+                }
+            })
+        })
+    })
+    slideBtnsLeft.forEach(btn =>{
+        btn.addEventListener("click", () =>{
+            infoSlidesMobPopup.forEach(item =>{
+                if(item.parentElement.parentElement.parentElement !== null){
+                    item.classList.remove("_active")
+                    item.parentElement.parentElement.parentElement.classList.remove("_active")
+                    item.classList.remove("_active")
+                }
+            })
+        })
 
 
- function createSlider(slides, leftBtn, rightBtn, slidesIcons, current, path, img, week, coverflow){
+    })
+    slideBtnsRight.forEach(btn =>{
+        btn.addEventListener("click", () =>{
+            infoSlidesMobPopup.forEach(item =>{
+                if(item.parentElement.parentElement.parentElement !== null){
+                    item.classList.remove("_active")
+                    item.parentElement.parentElement.parentElement.classList.remove("_active")
+                    item.classList.remove("_active")
+                }
+            })
+        })
+
+
+    })
+
+/// гліч слайдер
+ function createSlider(slides, leftBtn, rightBtn, slidesIcons, current, path, img, week, coverflow, coverflowOffWidth){
+
+     let coverflowToggler = true
+
+     if(window.innerWidth < coverflowOffWidth){
+         coverflowToggler = false
+         // console.log(coverflowToggler)
+     }
 
      function coverFlowClasses(right, left, slides){
          slides.forEach((slide, i) =>{
-             if(current === i){
-                 if(slide.previousElementSibling === null){
-                     slides[slides.length -1].classList.add(right)
-                     // slides[slides.length -1].classList.add("glitch")
-                 }else{
-                     slide.previousElementSibling.classList.add(right)
-                     // slide.previousElementSibling.classList.add("glitch")
+             if(coverflowToggler){
+                 if(current === i){
+                     if(slide.previousElementSibling === null){
+                         slides[slides.length -1].classList.add(right)
+                     }else{
+                         slide.previousElementSibling.classList.add(right)
+                     }
+                     if(slide.nextSibling === null){
+                         slides[0].classList.add(left)
+                     }
+                     else{
+                         slide.nextSibling.classList.add(left)
+                     }
+                     console.log(current, slides.length - 1)
                  }
-                 if(slide.nextSibling === null){
-                     slides[0].classList.add(left)
-                     // slides[0].classList.add("glitch")
-                 }
-                 else{
-                     slide.nextSibling.classList.add(left)
-                     // slide.nextSibling.classList.add("glitch")
-
-                 }
-                 console.log(current, slides.length - 1)
-                 // if(current === slides.length -1){
-                 //     slides[0].classList.add(left)
-                 //     slides[slides.length - 1].classList.add(right)
-                 // }
              }
+
 
              // if(i !== current + 1 && i !== slides.length && i !== 0){
              //     slide.classList.remove(right)
@@ -170,7 +213,13 @@ document.addEventListener("DOMContentLoaded", () =>{
 
              slides[current].classList.add("glitch");
              current = i;
-             updateGlitchLayers(`url("${path}${current + 1}/${img}") no-repeat 0 0/contain`, current + 1);
+             if(week === 2){
+                 updateGlitchLayers(`url("${path}${current + 7}/${img}") no-repeat 0 0/contain`, current + 1);
+             }
+             else{
+                 updateGlitchLayers(`url("${path}${current + 1}/${img}") no-repeat 0 0/contain`, current + 1);
+
+             }
 
              setTimeout(() => {
                  SlideIconsInit(slidesIcons, current);
@@ -180,6 +229,7 @@ document.addEventListener("DOMContentLoaded", () =>{
                  });
                  rightBtn.style.pointerEvents = "initial";
                  leftBtn.style.pointerEvents = "initial";
+
              }, 1000);
          });
      });
@@ -187,7 +237,29 @@ document.addEventListener("DOMContentLoaded", () =>{
      SlideIconsInit(slidesIcons, current);
 
  }
+ function setPopups(popups, popupBtns, closeBtns){
+    popups = document.querySelectorAll(popups)
+    popupBtns = document.querySelectorAll(popupBtns)
+    closeBtns = document.querySelectorAll(closeBtns)
 
+    popupBtns.forEach(btn =>{
+         btn.addEventListener("click", (e) =>{
+          popups.forEach((popup => {
+              popup.classList.remove("active")
+              if(e.target.parentElement === popup.parentElement){
+                  popup.classList.toggle("active")
+              }
+          }))
+         })
+     })
+    closeBtns.forEach(btn =>{
+         btn.addEventListener("click", (e) =>{
+             popups.forEach((popup => {
+                 popup.classList.remove("active")
+             }))
+         })
+     })
+ }
 
 
     const slides = document.querySelectorAll(".slide");
@@ -216,31 +288,171 @@ document.addEventListener("DOMContentLoaded", () =>{
         }
     }
 
-    createSlider(".slide", ".slide__move-left", ".slide__move-right", ".quests__icons-item", 1,"./img/quests/slide", "pers.png", week )
-    createSlider(".prize__slide", ".prize__move-left", ".prize__move-right", ".prize__icons-item", 1,"./img/prize/slide", "prize.png", null, true )
+    let questsPath = "./img/quests/slide"
 
-    // const leftBtnPrize = document.querySelector(".prize__move-left");
-    // const rightBtnPrize = document.querySelector(".prize__move-right");
+    function checkMediaQueries(oldPath, newPath) {
 
-    // function coverFlowClasses(right, left, slides){
-    //     slides = document.querySelectorAll(slides)
-    //
-    //     slides.forEach(slide =>{
-    //         slide.classList.remove(right)
-    //         slide.classList.remove(left)
-    //         if(slide.nextSibling.classList[1] === "_active"){
-    //             slide.classList.add(left)
-    //         }
-    //         if(slide.previousElementSibling.classList[1] === "_active"){
-    //             slide.classList.add(left)
-    //         }
-    //     })
-    // }
-    // leftBtnPrize.addEventListener("click", () =>{
-    //     coverFlowClasses("right-cover", "left-cover", '.prize__slide')
-    // })
+        const mediaQuery600 = window.matchMedia("(max-width: 600px)");
+
+        const mediaQuery950Landscape = window.matchMedia("(max-width: 950px) and (max-height: 600px) and (orientation: landscape)");
+
+        if (mediaQuery600.matches) {
+
+            oldPath = newPath;
+        }
+        else if (mediaQuery950Landscape.matches) {
+            oldPath = newPath;
+        }
+        else {
+           oldPath = newPath;
+        }
+
+        return oldPath
+    }
+
+
+
+
+    questsPath = checkMediaQueries(questsPath, "./img/quests/mob/slide")
+    console.log(questsPath)
+
+
+    createSlider(".slide", ".slide__move-left", ".slide__move-right", ".quests__icons-item", 1,questsPath, "pers.png", week )
+    createSlider(".prize__slide", ".prize__move-left", ".prize__move-right", ".prize__icons-item", 1,"./img/prize/slide", "prize.png", null, true , 1150)
+
+    setPopups(".guide__info", ".guide__info-btn", ".guide__info-close")
+    setPopups(".prize__slide-popup", ".prize__slide-info-btn", ".prize__slide-close")
+
+    const tableTabs = document.querySelectorAll(".table__list-item")
+    const tables = document.querySelectorAll(".table__item")
+
+    tableTabs.forEach((tab, tabIndex) =>{
+        tab.addEventListener("click", (e) =>{
+            tableTabs.forEach((item) =>{
+                item.classList.remove("active")
+                tab.classList.add("active")
+            })
+            tables.forEach((table, tableIndex) =>{
+                table.classList.remove("active")
+                if(tableIndex ===  tabIndex){
+                    table.classList.add("active")
+                }
+            })
+        })
+    })
+
+
+/// анімація динамічного набору текст
+    function dynamicTypewriter(element, speed, callback) {
+        const textArray = element.textContent.trim().split(' ');
+        const litArr = textArray.join(' ').split(/(?<=\S)(?=\s)|(?=\S)/).filter(char => char !== '');
+
+        let wordIndex = 0;
+        let charIndex = 0;
+        let currentText = '';
+
+        element.classList.add("_opacity")
+
+        function typeWord() {
+            if (wordIndex === litArr.length) {
+                element.classList.remove('typewriter-cursor');
+                return;
+            }
+            const currentWord = textArray[wordIndex];
+
+            if(currentWord === undefined) return
+
+            if (charIndex < currentWord.length) {
+                currentText += currentWord.charAt(charIndex);
+                element.innerText = currentText;
+                charIndex++;
+                setTimeout(typeWord, speed);
+            } else {
+                currentText += ' ';
+                element.innerText = currentText;
+                charIndex = 0;
+                wordIndex++;
+                setTimeout(typeWord, speed);
+            }
+        }
+
+        element.classList.add('typewriter-cursor');
+
+        typeWord();
+    }
+
+    function observeElements(typeElems) {
+        const options = {
+            root: null,
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    dynamicTypewriter(entry.target, 35, () => {
+
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        typeElems.forEach(item => {
+            observer.observe(item);
+        });
+    }
+
+    const typeAnim = document.querySelectorAll('.type-anim');
+    observeElements(typeAnim);
+
+/// progress bar анімація
+    function progressAnim(start, elem, elemWrap, currentPosition){
+        if(currentPosition <= 100){
+            elem.style.width = `${currentPosition}%`
+            elemWrap.innerText = `${currentPosition}%`
+            ++currentPosition
+            setTimeout( () => progressAnim(start, elem, elemWrap, currentPosition), 70)
+        }else if(currentPosition >= 100){
+            currentPosition = start
+            setTimeout( () => progressAnim(start, elem, elemWrap, currentPosition), 70)
+        }
+    }
+    const progressBar = document.querySelector(".info__progress-bar")
+    const progressWrap = document.querySelector(".info__progress-text")
+
+    progressAnim(40, progressBar, progressWrap, 40)
+
+// popups
+    const tablePopupBtn = document.querySelector(".table__btn")
+    const closePopups = document.querySelector(".popups__close")
+    const popupsWrap = document.querySelector(".popups")
+
+    tablePopupBtn.addEventListener("click", () =>{
+        popupsWrap.classList.add("_table")
+        document.body.classList.add("_overflow-hidden")
+    })
+    closePopups.addEventListener("click", () =>{
+        popupsWrap.classList.remove("_table")
+        popupsWrap.classList.remove("_done")
+        document.body.classList.remove("_overflow-hidden")
+
+    })
+
 
 // for test
+
+    document.querySelector(".dark-btn").addEventListener("click", () =>{
+        document.body.classList.toggle("dark")
+    })
+
+    const donePopupBtn = document.querySelector(".done-popup")
+
+    donePopupBtn.addEventListener("click", () =>{
+        popupsWrap.classList.toggle("_done")
+        document.body.classList.toggle("_overflow-hidden")
+
+    })
 
     const week1 = document.querySelector(".week1");
     const week2 = document.querySelector(".week2");
