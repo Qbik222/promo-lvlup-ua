@@ -335,6 +335,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     setPopups(".guide__info", ".guide__info-btn", ".guide__info-close")
     setPopups(".prize__slide-popup", ".prize__slide-info-btn", ".prize__slide-close")
+    setPopups(".table__info-popup", ".table__info", ".table__info-close")
 
     const tableTabs = document.querySelectorAll(".table__list-item")
     const tables = document.querySelectorAll(".table__item")
@@ -354,6 +355,22 @@ document.addEventListener("DOMContentLoaded", () =>{
         })
     })
 
+    const prizeRightBtn = document.querySelector(".prize__move-right")
+    const prizeLeftBtn = document.querySelector(".prize__move-left")
+    const prizePopups = document.querySelectorAll(".rize__slide-popup")
+
+    function closeDrop(drops){
+        drops.forEach(drop =>{
+            drop.classList.remove("active")
+        })
+    }
+
+    prizeRightBtn.addEventListener("click", () =>{
+        closeDrop(prizePopups)
+    })
+    prizeLeftBtn.addEventListener("click", () =>{
+        closeDrop(prizePopups)
+    })
 
 /// анімація динамічного набору текст
     function dynamicTypewriter(element, speed, callback) {

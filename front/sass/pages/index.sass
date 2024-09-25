@@ -1473,6 +1473,52 @@ body.light
     &:hover
       cursor: pointer
       background: url("../img/buttons/big-info-icon-hover.png") no-repeat 0 0/contain
+    &-popup
+      display: none
+      position: absolute
+      z-index: 3
+      top: 0
+      right: 20px
+      width: 345px
+      min-height: 220px
+      max-height: 220px
+      background: $blue url("../img/mini-popup-bg.png") no-repeat 0 0/cover
+      background-size: 100% 100%
+      padding: 20px
+      &.active
+        display: block
+
+
+    &-title
+      color: $white
+      font-family: $font-handjet-med
+      font-size: 20px
+      line-height: 20px
+      margin-bottom: 10px
+    &-text
+      color: $white
+      font-family: $font-handjet-light
+      font-size: 17px
+      line-height: 24px
+      &:not(:first-child)
+        margin-top: 15px
+    &-scroll
+      overflow-y: scroll
+      overflow-x: hidden
+      max-height: 160px
+
+    &-close
+      width: 54px
+      height: 58px
+      position: absolute
+      top: 0
+      right: 0px
+      transform: translate(0, -100%)
+      background: url("../img/buttons/btn-close.png") no-repeat 0 0/contain
+      transition: background .7s ease-in-out
+      &:hover
+        background: url("../img/buttons/btn-close-hover.png") no-repeat 0 0/contain
+        cursor: pointer
   &__btn
     padding: 12px 0
     position: relative
@@ -1939,7 +1985,7 @@ body.light
     &-right
       transform: scale(-1, 1)
   &__btn
-    margin-top: 30px
+    margin-top: 45px
 
 
 .drop
