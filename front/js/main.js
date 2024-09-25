@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     const infoSlidesMob = document.querySelectorAll(".slide__info-mob")
     const infoSlidesMobPopup = document.querySelectorAll(".slide__info-bottom")
-    const slideBtnsLeft = document.querySelectorAll(".slide__move-left")
-    const slideBtnsRight = document.querySelectorAll(".slide__move-right")
+    const slideBtnLeft = document.querySelector(".slide__move-left")
+    const slideBtnRight = document.querySelector(".slide__move-right")
 
     infoSlidesMob.forEach((item, indexItem) =>{
         item.addEventListener("click", () =>{
@@ -17,28 +17,24 @@ document.addEventListener("DOMContentLoaded", () =>{
             })
         })
     })
-    slideBtnsLeft.forEach(btn =>{
-        btn.addEventListener("click", () =>{
-            infoSlidesMobPopup.forEach(item =>{
-                if(item.parentElement.parentElement.parentElement !== null){
-                    item.classList.remove("_active")
-                    item.parentElement.parentElement.parentElement.classList.remove("_active")
-                    item.classList.remove("_active")
-                }
-            })
+    slideBtnLeft.addEventListener("click", () =>{
+        infoSlidesMobPopup.forEach(item =>{
+            if(item.parentElement.parentElement.parentElement !== null){
+                item.classList.remove("_active")
+                item.parentElement.parentElement.parentElement.classList.remove("_active")
+                item.classList.remove("_active")
+            }
         })
 
 
     })
-    slideBtnsRight.forEach(btn =>{
-        btn.addEventListener("click", () =>{
-            infoSlidesMobPopup.forEach(item =>{
-                if(item.parentElement.parentElement.parentElement !== null){
-                    item.classList.remove("_active")
-                    item.parentElement.parentElement.parentElement.classList.remove("_active")
-                    item.classList.remove("_active")
-                }
-            })
+    slideBtnRight.addEventListener("click", () =>{
+        infoSlidesMobPopup.forEach(item =>{
+            if(item.parentElement.parentElement.parentElement !== null){
+                item.classList.remove("_active")
+                item.parentElement.parentElement.parentElement.classList.remove("_active")
+                item.classList.remove("_active")
+            }
         })
 
 
