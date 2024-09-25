@@ -345,8 +345,10 @@ document.addEventListener("DOMContentLoaded", () =>{
 /// анімація динамічного набору текст
     function dynamicTypewriter(element, speed, callback) {
         const textArray = element.textContent.trim().split(' ');
-        const litArr = textArray.join(' ').split(/(?<=\S)(?=\s)|(?=\S)/).filter(char => char !== '');
-
+        // const litArr = textArray.join(' ').split(/(?<=\S)(?=\s)|(?=\S)/).filter(char => char !== '');
+        const litArr = textArray.join(' ').split(/(\s+)/).filter(function (_char) {
+            return _char.trim() !== '' || _char === ' ';
+        });
         let wordIndex = 0;
         let charIndex = 0;
         let currentText = '';
