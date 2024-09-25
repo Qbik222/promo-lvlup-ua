@@ -185,7 +185,6 @@ document.addEventListener("DOMContentLoaded", () =>{
          rightBtn.style.pointerEvents = "none";
          leftBtn.style.pointerEvents = "none";
          const nextSlideIndex = direction === "left" ? (current === 0 ? slides.length : current) : (current === slides.length - 1 ? 1 : current + 2);
-         console.log(week)
          if(week === 2){
              updateGlitchLayers(`url("${path}${nextSlideIndex + 6}/${img}") no-repeat 0 0/contain`, nextSlideIndex);
          }else{
@@ -357,7 +356,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     const prizeRightBtn = document.querySelector(".prize__move-right")
     const prizeLeftBtn = document.querySelector(".prize__move-left")
-    const prizePopups = document.querySelectorAll(".rize__slide-popup")
+    const prizePopups = document.querySelectorAll(".prize__slide-popup")
 
     function closeDrop(drops){
         drops.forEach(drop =>{
