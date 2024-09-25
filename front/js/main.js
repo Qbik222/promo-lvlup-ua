@@ -13,11 +13,20 @@ document.addEventListener("DOMContentLoaded", () =>{
                     popup.classList.toggle("_active")
                     popup.parentElement.parentElement.parentElement.classList.toggle("_active")
                     item.classList.toggle("_active")
+
                 }
             })
         })
     })
     slideBtnLeft.addEventListener("click", () =>{
+        infoSlidesMob.forEach(item =>{
+            if(item.parentElement.parentElement.parentElement !== null){
+                item.style.pointerEvents = "none"
+                setTimeout(() =>{
+                    item.style.pointerEvents = "initial"
+                }, 1000)
+            }
+        })
         infoSlidesMobPopup.forEach(item =>{
             if(item.parentElement.parentElement.parentElement !== null){
                 item.classList.remove("_active")
@@ -29,6 +38,14 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     })
     slideBtnRight.addEventListener("click", () =>{
+        infoSlidesMob.forEach(item =>{
+            if(item.parentElement.parentElement.parentElement !== null){
+                item.style.pointerEvents = "none"
+                setTimeout(() =>{
+                    item.style.pointerEvents = "initial"
+                }, 1000)
+            }
+        })
         infoSlidesMobPopup.forEach(item =>{
             if(item.parentElement.parentElement.parentElement !== null){
                 item.classList.remove("_active")
