@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", () =>{
+    window.addEventListener("orientationchange", () =>{
+        location.reload()
+    })
+
     let week = localStorage.getItem("week") ? parseInt(localStorage.getItem("week")) : 1;
 
     const infoSlidesMob = document.querySelectorAll(".slide__info-mob")
