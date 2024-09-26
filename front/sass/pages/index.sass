@@ -55,6 +55,7 @@ body.light
   overflow: hidden !important
 
 .btn
+  width: fit-content
   height: 91px
   color: $white
   font-size: 23px
@@ -62,7 +63,7 @@ body.light
   background: url("../img/buttons/btn-bg.png") no-repeat 0 0/cover
   background-size: 100% 100%
   text-transform: uppercase
-  padding: 34px 24px 34px 34px
+  padding: 34px 73px 34px 77px
   position: relative
   transition: background .4s ease-in-out
   text-align: center
@@ -82,6 +83,7 @@ body.light
   &:hover
     cursor: pointer
     background: url("../img/buttons/btn-hover-bg.png") no-repeat 0 0/cover
+    background-size: 100% 100%
 
 .title
   display: inline-block
@@ -158,51 +160,9 @@ body.light
     background: url("../img/promo/promo-main-tab.png") no-repeat 0 0/contain
   @media screen and (max-width: 600px)
     background: url("../img/promo/promo-main-mob.jpg") no-repeat 0 0/contain
-
-  &__bottom
-    max-width: 660px
-    color: $white
-    font-size: 17px
-    text-align: center
-    font-family: $font-handjet-exlight
-    opacity: .5
-    letter-spacing: 0
-    margin: 30px auto 0 auto
-  &__wrap
-    display: flex
-    align-items: flex-start
-    justify-content: space-between
-    margin: auto 0 0 0
-  &__prize
-    display: flex
-    align-items: flex-start
-    &-item
-      color: $white
-      font-family: $font-handjet-med
-      text-transform: uppercase
-      font-size: 33px
-      line-height: 29px
-      text-align: right
-      margin-right: 10px
-    &-title
-      background: url("../img/promo/promo-prize.svg") no-repeat 0 0/contain
-      width: 520px
-      height: 83px
-      animation: clipLeftToRight 1s linear
-      position: relative
-      .glitch__layer
-        background: rgba($dark-blue, .5) url("../img/promo/promo-prize.svg") no-repeat 0 0/contain
-  &__text
-    display: flex
-    flex-direction: column
-    align-items: flex-end
-    &-btn
-      animation: clipRightToLeft 2s ease-out
-    &-info
-      font-family: $font-handjet-light
-      font-size: 28px
-      margin: 5px 5px 0 0
-      filter: drop-shadow(4px 1px 0px rgba(255, 255, 255, 0.10))
+  &__btn
+    animation: clipRightToLeft 1s ease-out
+    margin: auto auto 70px auto
 
 .info
   display: flex
@@ -216,11 +176,12 @@ body.light
     span
       white-space: nowrap
   &__left
-    max-width: 680px
-    width: 50%
-    margin: -55px -20px 0 0
+    max-width: 1160px
+    min-width: 1160px
+    //width: 50%
+    margin: -125px -260px 0 -190px
   &__right
-    padding: 110px 0 0 0
+    padding: 30px 0 0 0
     max-width: 620px
     width: 50%
   &__text
@@ -266,7 +227,6 @@ body.light
       left: 0
 
 .guide
-  padding-top: 120px
   width: 100%
   display: flex
   align-items: center
@@ -969,7 +929,7 @@ body.light
           height: 128px
           background: url("../img/quests/quest-prize-bg.png") no-repeat 0 0/cover
           background-size: 100% 100%
-          padding: 13px 0 12px 0
+          padding: 5px 0 12px 0
           display: flex
           flex-direction: column
           align-items: center
@@ -986,6 +946,7 @@ body.light
             transform: rotate(-2deg)
             &:first-child
               font-size: 15px
+              margin-bottom: 5px
             &::before
               content: attr(data-decor)
               display: block
@@ -1004,8 +965,6 @@ body.light
             text-align: center
             color: $white
             transform: rotate(-2deg)
-            &:last-child
-              text-transform: uppercase
           &-item
             color: $white
             text-align: center
@@ -2136,8 +2095,6 @@ body.light
 
 @keyframes clipRightToLeft
   0%
-    clip-path: polygon(100% 0, 100% 0%, 100% 100%, 100% 100%)
-  50%
     clip-path: polygon(100% 0, 100% 0%, 100% 100%, 100% 100%)
   100%
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
