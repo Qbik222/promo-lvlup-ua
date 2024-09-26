@@ -63,12 +63,9 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 /// гліч слайдер
  function createSlider(slides, leftBtn, rightBtn, slidesIcons, current, path, img, week, coverflow, coverflowOffWidth){
-
      let coverflowToggler = true
-
      if(window.innerWidth < coverflowOffWidth){
          coverflowToggler = false
-         // console.log(coverflowToggler)
      }
 
      function coverFlowClasses(right, left, slides){
@@ -86,41 +83,8 @@ document.addEventListener("DOMContentLoaded", () =>{
                      else{
                          slide.nextSibling.classList.add(left)
                      }
-                     console.log(current, slides.length - 1)
                  }
              }
-
-
-             // if(i !== current + 1 && i !== slides.length && i !== 0){
-             //     slide.classList.remove(right)
-             //     slide.classList.remove(left)
-             //     console.log(current, i)
-             // }
-             // if(current === 0){
-             //     console.log(slide.nextSibling)
-             //     slide.nextSibling.classList.add(right)
-             // }
-             //
-             // // console.log(i, current)
-             // if(i === current + 1){
-             //     console.log(slide.nextSibling.classList)
-             //     slide.classList.add(left)
-             // }
-             // if(current === slides.length - 1 && i === 0){
-             //     console.log(slide.nextSibling.classList)
-             //     slide.classList.add(left)
-             // }
-             // else{
-
-             // }
-             // slide.previousElementSibling.classList.add(right)
-             // if(slide.nextSibling.classList[1] === "_active"){
-             //     slide.classList.add(left)
-             //
-             // }
-             // if(slide.previousElementSibling.classList[1] === "_active"){
-             //     slide.classList.add(left)
-             // }
          })
      }
      slides = document.querySelectorAll(slides);
@@ -135,7 +99,6 @@ document.addEventListener("DOMContentLoaded", () =>{
      if(coverflow){
          coverFlowClasses("right-cover", "left-cover", slides)
      }
-
      function updateGlitchLayers(path, index) {
          if(week === 2){
              index += 6
@@ -249,9 +212,7 @@ document.addEventListener("DOMContentLoaded", () =>{
              }, 1000);
          });
      });
-
      SlideIconsInit(slidesIcons, current);
-
  }
  function setPopups(popups, popupBtns, closeBtns){
     popups = document.querySelectorAll(popups)
@@ -276,10 +237,7 @@ document.addEventListener("DOMContentLoaded", () =>{
          })
      })
  }
-
-
     const slides = document.querySelectorAll(".slide");
-
     const slidesIcons = document.querySelectorAll(".quests__icons-item");
     if(week === 1){
         slides.forEach((slide, i) =>{
@@ -303,17 +261,11 @@ document.addEventListener("DOMContentLoaded", () =>{
 
         }
     }
-
     let questsPath = "./img/quests/slide"
-
     function checkMediaQueries(oldPath, newPath) {
-
         const mediaQuery600 = window.matchMedia("(max-width: 600px)");
-
         const mediaQuery950Landscape = window.matchMedia("(max-width: 950px) and (max-height: 600px) and (orientation: landscape)");
-
         if (mediaQuery600.matches) {
-
             oldPath = newPath;
         }
         else if (mediaQuery950Landscape.matches) {
@@ -322,20 +274,12 @@ document.addEventListener("DOMContentLoaded", () =>{
         else {
            oldPath = newPath;
         }
-
         return oldPath
     }
-
-
-
-
     questsPath = checkMediaQueries(questsPath, "./img/quests/mob/slide")
-    console.log(questsPath)
-
 
     createSlider(".slide", ".slide__move-left", ".slide__move-right", ".quests__icons-item", 1,questsPath, "pers.png", week )
     createSlider(".prize__slide", ".prize__move-left", ".prize__move-right", ".prize__icons-item", 1,"./img/prize/slide", "prize.png", null, true , 1150)
-
     setPopups(".guide__info", ".guide__info-btn", ".guide__info-close")
     setPopups(".prize__slide-popup", ".prize__slide-info-btn", ".prize__slide-close")
     setPopups(".table__info-popup", ".table__info", ".table__info-close")
@@ -367,7 +311,6 @@ document.addEventListener("DOMContentLoaded", () =>{
             drop.classList.remove("active")
         })
     }
-
     prizeRightBtn.addEventListener("click", () =>{
         closeDrop(prizePopups)
     })
@@ -378,7 +321,6 @@ document.addEventListener("DOMContentLoaded", () =>{
 /// анімація динамічного набору текст
     function dynamicTypewriter(element, speed, callback) {
         const textArray = element.textContent.trim().split(' ');
-        // const litArr = textArray.join(' ').split(/(?<=\S)(?=\s)|(?=\S)/).filter(char => char !== '');
         const litArr = textArray.join(' ').split(/(\s+)/).filter(function (_char) {
             return _char.trim() !== '' || _char === ' ';
         });
@@ -410,18 +352,14 @@ document.addEventListener("DOMContentLoaded", () =>{
                 setTimeout(typeWord, speed);
             }
         }
-
         element.classList.add('typewriter-cursor');
-
         typeWord();
     }
-
     function observeElements(typeElems) {
         const options = {
             root: null,
             threshold: 0.5
         };
-
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach((entry, i) => {
                 if (entry.isIntersecting) {
@@ -432,12 +370,10 @@ document.addEventListener("DOMContentLoaded", () =>{
                 }
             });
         }, options);
-
         typeElems.forEach(item => {
             observer.observe(item);
         });
     }
-
     const typeAnim = document.querySelectorAll('.type-anim');
     observeElements(typeAnim);
 
@@ -504,7 +440,5 @@ document.addEventListener("DOMContentLoaded", () =>{
         localStorage.setItem("week", 2);
         location.reload();
     });
-
-
 })
 
