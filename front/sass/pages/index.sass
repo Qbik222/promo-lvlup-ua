@@ -1686,45 +1686,8 @@ body.light
     &:hover
       background: url("../img/buttons/btn-close-hover.png") no-repeat 0 0/contain
       cursor: pointer
-  &__table, &__done
+  &__done
     display: none
-  &._table
-    display: flex
-    .popups
-      &__table
-        max-width: 800px
-        text-align: center
-        display: flex
-        flex-direction: column
-        align-items: center
-        &-title
-          line-height: 65px
-          margin-bottom: 20px
-          &::before
-            white-space: normal
-        &-body
-          display: flex
-          justify-content: center
-          align-items: flex-start
-          width: 345px
-          background: $blue url("../img/table/popup-table-bg.png") no-repeat 0 0/cover
-          background-size: 100% 100%
-          padding: 15px
-          max-height: 475px
-          overflow-y: auto
-          overflow-x: hidden
-        &-scroll-wrap
-          display: flex
-          justify-content: center
-          align-items: center
-        &-item
-          width: 150px
-          color: $white
-          font-size: 20px
-          font-family: $font-handjet-light
-          text-transform: uppercase
-          &:not(:last-child)
-            margin-bottom: 15px
   &._done
     display: flex
     .popups
