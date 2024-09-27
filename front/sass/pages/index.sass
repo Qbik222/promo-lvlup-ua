@@ -507,6 +507,22 @@ body.light
         display: block
         position: absolute
         z-index: -1
+        background: url("../img/quests/slide-bg-default.png") no-repeat 0 0/cover
+        background-size: 100% 100%
+        width: 1170px
+        height: 770px
+        left: 250px
+        top: 30px
+        @media screen and (max-width: 600px)
+          background: url("../img/quests/slide-bg-default-mob.png") no-repeat 0 0/cover
+          width: 601px
+          height: 400px
+          background-size: 100% 100%
+        @media screen and (max-width: 950px) and (max-height: 450px) and  (orientation: landscape)
+          background: url("../img/quests/slide-bg-default-mob.png") no-repeat 0 0/cover
+          width: 601px
+          height: 400px
+          background-size: 100% 100%
       &__img
         min-height: 730px
         position: relative
@@ -601,9 +617,9 @@ body.light
         &::before
           background: url("../img/quests/slide1/slide-bg.png") no-repeat 0 0/cover
           background-size: 100% 100%
-          width: 880px
-          height: 620px
-          left: 300px
+          width: 1170px
+          height: 770px
+          left: 275px
           top: 120px
           @media screen and (max-width: 600px)
             background: url("../img/quests/mob/slide1/slide-bg.png") no-repeat 0 0/contain
@@ -611,29 +627,18 @@ body.light
             background: url("../img/quests/mob/slide1/slide-bg.png") no-repeat 0 0/contain
         .slide__img
           background: url("../img/quests/slide1/pers.png") no-repeat 0 0/contain
-          min-width: 660px
-          margin-left: 130px
-          top: 50px
+          min-width: 1210px
+          margin-left: -150px
+          top: 0px
           @media screen and (max-width: 600px)
             background: url("../img/quests/mob/slide1/pers.png") no-repeat 0 0/contain
           @media screen and (max-width: 950px) and (max-height: 450px) and (orientation: landscape)
             background: url("../img/quests/mob/slide1/pers.png") no-repeat 0 0/contain
         .slide__info
-          margin-left: -50px
+          margin-left: -320px
         .slide__title
           padding-bottom: 0
       &.quest2
-        &::before
-          background: url("../img/quests/slide2/slide-bg.png") no-repeat 0 0/cover
-          background-size: 100% 100%
-          width: 1170px
-          height: 760px
-          left: 260px
-          top: 90px
-          @media screen and (max-width: 600px)
-            background: url("../img/quests/mob/slide2/slide-bg.png") no-repeat 0 0/cover
-          @media screen and (max-width: 950px) and (max-height: 450px) and  (orientation: landscape)
-            background: url("../img/quests/mob/slide2/slide-bg.png") no-repeat 0 0/cover
         .slide__img
           background: url("../img/quests/slide2/pers.png") no-repeat 0 0/contain
           min-width: 1210px
@@ -642,16 +647,15 @@ body.light
             background: url("../img/quests/mob/slide2/pers.png") no-repeat 0 0/contain
           @media screen and (max-width: 950px) and (max-height: 450px) and  (orientation: landscape)
             background: url("../img/quests/mob/slide2/pers.png") no-repeat 0 0/contain
-        .slide__info-prize
-          gap: 7px
       &.quest3
         &::before
           background: url("../img/quests/slide3/slide-bg.png") no-repeat 0 0/cover
           background-size: 100% 100%
           width: 885px
-          height: 572px
-          left: 235px
-          top: 140px
+          height: 372px
+          left: 285px
+          bottom: -10px
+          top: auto
           @media screen and (max-width: 600px)
             background: url("../img/quests/mob/slide3/slide-bg.png") no-repeat 0 0/cover
           @media screen and (max-width: 950px) and (max-height: 450px) and  (orientation: landscape)
@@ -668,56 +672,42 @@ body.light
         .slide__info
           margin-left: -265px
       &.quest4
-        &::before
-          background: url("../img/quests/slide4/slide-bg.png") no-repeat 0 0/cover
-          background-size: 100% 100%
-          width: 1220px
-          height: 770px
-          left: 230px
-          top: 40px
-          @media screen and (max-width: 600px)
-            background: url("../img/quests/mob/slide4/slide-bg.png") no-repeat 0 0/cover
-          @media screen and (max-width: 950px) and (max-height: 450px) and  (orientation: landscape)
-            background: url("../img/quests/mob/slide4/slide-bg.png") no-repeat 0 0/cover
         .slide__img
           background: url("../img/quests/slide4/pers.png") no-repeat 0 0/contain
           min-width: 1200px
-          margin-left: -160px
+          margin-left: -180px
           @media screen and (max-width: 600px)
             background: url("../img/quests/mob/slide4/pers.png") no-repeat 0 0/contain
           @media screen and (max-width: 950px) and (max-height: 450px) and  (orientation: landscape)
             background: url("../img/quests/mob/slide4/pers.png") no-repeat 0 0/contain
         .slide__info
-          margin-left: -300px
-        .slide__info-prize
-          gap: 7px
+          margin-left: -280px
       &.quest5
         &::before
           background: url("../img/quests/slide5/slide-bg.png") no-repeat 0 0/cover
           background-size: 100% 100%
-          width: 910px
-          height: 380px
-          left: 190px
-          bottom: -55px
+          width: 1585px
+          height: 1050px
+          left: -30px
+          top: auto
+          bottom: -75px
           @media screen and (max-width: 600px)
             background: url("../img/quests/mob/slide5/slide-bg.png") no-repeat 0 0/cover
           @media screen and (max-width: 950px) and (max-height: 450px) and  (orientation: landscape)
             background: url("../img/quests/mob/slide5/slide-bg.png") no-repeat 0 0/cover
         .slide__img
           background: url("../img/quests/slide5/pers.png") no-repeat 0 0/contain
-          min-width: 1400px
-          min-height: 885px
-          margin-left: -270px
-          margin-bottom: -155px
-          top: -105px
+          width: 1210px
+          height: 730px
+          margin-left: -180px
+          //margin-bottom: -155px
+          //top: -105px
           @media screen and (max-width: 600px)
             background: url("../img/quests/mob/slide5/pers.png") no-repeat 0 0/contain
           @media screen and (max-width: 950px) and (max-height: 450px) and  (orientation: landscape)
             background: url("../img/quests/mob/slide5/pers.png") no-repeat 0 0/contain
         .slide__info
-          margin-left: -390px
-        .slide__title
-          margin-bottom: -6px
+          margin-left: -290px
       &.quest6
         &::before
           background: url("../img/quests/slide6/slide-bg.png") no-repeat 0 0/cover
@@ -740,20 +730,8 @@ body.light
             background: url("../img/quests/mob/slide6/pers.png") no-repeat 0 0/contain
         .slide__info
           margin-left: -287px
-        .slide__info-prize
-          gap: 7px
+
       &.quest7
-        &::before
-          background: url("../img/quests/slide7/slide-bg.png") no-repeat 0 0/cover
-          background-size: 100% 100%
-          width: 1213px
-          height: 789px
-          left: 240px
-          bottom: -20px
-          @media screen and (max-width: 600px)
-            background: url("../img/quests/mob/slide7/slide-bg.png") no-repeat 0 0/cover
-          @media screen and (max-width: 950px) and (max-height: 450px) and  (orientation: landscape)
-            background: url("../img/quests/mob/slide7/slide-bg.png") no-repeat 0 0/cover
         .slide__img
           background: url("../img/quests/slide7/pers.png") no-repeat 0 0/contain
           min-width: 1207px
@@ -764,32 +742,20 @@ body.light
             background: url("../img/quests/mob/slide7/pers.png") no-repeat 0 0/contain
         .slide__info
           margin-left: -287px
-        .slide__info-prize
-          gap: 7px
+
       &.quest8
-        &::before
-          background: url("../img/quests/slide8/slide-bg.png") no-repeat 0 0/cover
-          background-size: 100% 100%
-          width: 1005px
-          height: 681px
-          left: 150px
-          bottom: 60px
-          @media screen and (max-width: 600px)
-            background: url("../img/quests/mob/slide8/slide-bg.png") no-repeat 0 0/cover
-          @media screen and (max-width: 950px) and (max-height: 450px) and  (orientation: landscape)
-            background: url("../img/quests/mob/slide8/slide-bg.png") no-repeat 0 0/cover
         .slide__img
           background: url("../img/quests/slide8/pers.png") no-repeat 0 0/contain
-          min-width: 697px
-          height: 649px
-          margin-left: 120px
-          top: 40px
+          min-width: 1210px
+          height: 730px
+          margin-left: -160px
+          top: 0px
           @media screen and (max-width: 600px)
             background: url("../img/quests/mob/slide8/pers.png") no-repeat 0 0/contain
           @media screen and (max-width: 950px) and (max-height: 450px) and  (orientation: landscape)
             background: url("../img/quests/mob/slide8/pers.png") no-repeat 0 0/contain
         .slide__info
-          margin-left: -77px
+          margin-left: -310px
       &.quest9
         &::before
           background: url("../img/quests/slide9/slide-bg.png") no-repeat 0 0/cover
@@ -826,20 +792,8 @@ body.light
           left: 530px
           top: auto
           bottom: 0px
-        .slide__info-prize
-          gap: 7px
+
       &.quest10
-        &::before
-          background: url("../img/quests/slide10/slide-bg.png") no-repeat 0 0/cover
-          background-size: 100% 100%
-          width: 980px
-          height: 700px
-          left: 150px
-          bottom: 60px
-          @media screen and (max-width: 600px)
-            background: url("../img/quests/mob/slide10/slide-bg.png") no-repeat 0 0/cover
-          @media screen and (max-width: 950px) and (max-height: 450px) and  (orientation: landscape)
-            background: url("../img/quests/mob/slide10/slide-bg.png") no-repeat 0 0/cover
         .slide__img
           background: url("../img/quests/slide10/pers.png") no-repeat 0 0/contain
           min-width: 729px
@@ -854,17 +808,6 @@ body.light
         .slide__title
           margin-bottom: -6px
       &.quest11
-        &::before
-          background: url("../img/quests/slide11/slide-bg.png") no-repeat 0 0/cover
-          background-size: 100% 100%
-          width: 980px
-          height: 585px
-          left: 115px
-          bottom: 155px
-          @media screen and (max-width: 600px)
-            background: url("../img/quests/mob/slide11/slide-bg.png") no-repeat 0 0/cover
-          @media screen and (max-width: 950px) and (max-height: 450px) and  (orientation: landscape)
-            background: url("../img/quests/mob/slide11/slide-bg.png") no-repeat 0 0/cover
         .slide__img
           background: url("../img/quests/slide11/pers.png") no-repeat 0 0/contain
           min-width: 720px
@@ -899,8 +842,7 @@ body.light
             background: url("../img/quests/mob/slide12/pers.png") no-repeat 0 0/contain
         .slide__info
           margin-left: -295px
-        .slide__info-prize
-          gap: 7px
+
       &__info
         max-width: 360px
         width: 100%
@@ -929,12 +871,12 @@ body.light
           height: 128px
           background: url("../img/quests/quest-prize-bg.png") no-repeat 0 0/cover
           background-size: 100% 100%
-          padding: 5px 0 12px 0
+          padding: 5px 0 5px 0
           display: flex
           flex-direction: column
           align-items: center
           justify-content: center
-          gap: 2px
+          gap: 4px
           @media screen and (max-width: 600px)
               background: url("../img/quests/quest-prize-bg-mob.png") no-repeat 0 0/cover
           &-title
@@ -1157,6 +1099,7 @@ body.light
         font-family: $font-handjet-light
         text-transform: uppercase
         font-size: 20px
+        margin-bottom: 15px
         &-decor
           font-size: 27px
           line-height: 23px
@@ -1224,7 +1167,7 @@ body.light
           font-family: $font-press-start2P
           font-size: 43px
           background-size: 100% 100%
-          padding: 30px 16px 30px 16px
+          padding: 30px 60px 30px 70px
         &-wrap
           display: flex
           align-items: center
