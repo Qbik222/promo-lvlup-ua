@@ -62,183 +62,210 @@ document.addEventListener("DOMContentLoaded", () =>{
     })
 
 /// гліч слайдер
- function createSlider(slides, leftBtn, rightBtn, slidesIcons, current, path, img, week, coverflow, coverflowOffWidth){
-     let coverflowToggler = true
-     if(window.innerWidth < coverflowOffWidth){
-         coverflowToggler = false
-     }
+    function createSlider(slides, leftBtn, rightBtn, slidesIcons, current, path, img, week, coverflow, coverflowOffWidth, subtitles){
+        let coverflowToggler = true
+        if(window.innerWidth < coverflowOffWidth){
+            coverflowToggler = false
+        }
 
-     function coverFlowClasses(right, left, slides){
-         slides.forEach((slide, i) =>{
-             if(coverflowToggler){
-                 if(current === i){
-                     if(slide.previousElementSibling === null){
-                         slides[slides.length -1].classList.add(right)
-                     }else{
-                         slide.previousElementSibling.classList.add(right)
-                     }
-                     if(slide.nextSibling === null){
-                         slides[0].classList.add(left)
-                     }
-                     else{
-                         slide.nextSibling.classList.add(left)
-                     }
-                 }
-             }
-         })
-     }
-     slides = document.querySelectorAll(slides);
-     leftBtn = document.querySelector(leftBtn);
-     rightBtn = document.querySelector(rightBtn);
-     slidesIcons = document.querySelectorAll(slidesIcons);
-     let glitchLayers = [];
-     slides.forEach(slide => {
-         glitchLayers = [...glitchLayers, ...slide.querySelectorAll(".glitch__layer")];
-     });
-     slides[current].classList.add("_active");
-     if(coverflow){
-         coverFlowClasses("right-cover", "left-cover", slides)
-     }
-     function updateGlitchLayers(path, index) {
-         if(week === 2){
-             index += 6
-         }
-         console.log(index)
-         glitchLayers.forEach(layer => {
-             layer.classList.forEach(className => {
-                 if (className.startsWith("slide-info-glitch")) {
-                     layer.classList.remove("slide-info-glitch");
-                 }
-                 if (className.startsWith("quest")) {
-                     layer.classList.remove(className);
-                 }
-             });
-             if (layer.parentElement.parentElement.classList[0] !== "slide__info") {
-                 layer.classList.add(`quest${index}`);
-                 layer.style.background = path;
-             }
-             else {
-                 layer.classList.add("slide-info-glitch");
-             }
-         });
-     }
+        function coverFlowClasses(right, left, slides){
+            slides.forEach((slide, i) =>{
+                if(coverflowToggler){
+                    if(current === i){
+                        if(slide.previousElementSibling === null){
+                            slides[slides.length -1].classList.add(right)
+                        }else{
+                            slide.previousElementSibling.classList.add(right)
+                        }
+                        if(slide.nextSibling === null){
+                            slides[0].classList.add(left)
+                        }
+                        else{
+                            slide.nextSibling.classList.add(left)
+                        }
+                    }
+                }
+            })
+        }
+        slides = document.querySelectorAll(slides);
+        subtitles = document.querySelectorAll(subtitles);
+        leftBtn = document.querySelector(leftBtn);
+        rightBtn = document.querySelector(rightBtn);
+        slidesIcons = document.querySelectorAll(slidesIcons);
+        let glitchLayers = [];
+        slides.forEach(slide => {
+            glitchLayers = [...glitchLayers, ...slide.querySelectorAll(".glitch__layer")];
+        });
+        slides[current].classList.add("_active");
+        if(coverflow){
+            coverFlowClasses("right-cover", "left-cover", slides)
+        }
 
-     function moveSlider(slides, direction) {
-         if (direction === "left") {
-             --current;
-             if (current < 0) current = slides.length - 1;
-         } else if (direction === "right") {
-             ++current;
-             if (current > slides.length - 1) current = 0;
-         }
+        function subtitlesInit(subtitles, slides){
+            console.log(slides)
+            slides.forEach((slide, slideIndex) =>{
+                if(slide.classList.contains("_active")){
+                    subtitles.forEach((subtitle, subtitleIndex) =>{
+                        subtitle.classList.remove("_active")
+                        if(slideIndex === subtitleIndex){
+                            subtitle.classList.add("_active")
+                        }
+                    })
+                }
 
-         slides.forEach((slide, i) => {
-             slide.classList.toggle("_active", i === current);
-             slide.classList.remove("glitch");
-         });
+            })
+        }
+        function updateGlitchLayers(path, index) {
+            if(week === 2){
+                index += 6
+            }
+            if(week === 3){
+                index += 12
+            }
+            console.log(index)
+            glitchLayers.forEach(layer => {
+                layer.classList.forEach(className => {
+                    if (className.startsWith("slide-info-glitch")) {
+                        layer.classList.remove("slide-info-glitch");
+                    }
+                    if (className.startsWith("quest")) {
+                        layer.classList.remove(className);
+                    }
+                });
+                if (layer.parentElement.parentElement.classList[0] !== "slide__info") {
+                    layer.classList.add(`quest${index}`);
+                    layer.style.background = path;
+                }
+                else {
+                    layer.classList.add("slide-info-glitch");
+                }
+            });
+        }
 
-         SlideIconsInit(slidesIcons, current);
-     }
+        function moveSlider(slides, direction) {
+            if (direction === "left") {
+                --current;
+                if (current < 0) current = slides.length - 1;
+            } else if (direction === "right") {
+                ++current;
+                if (current > slides.length - 1) current = 0;
+            }
 
-     function SlideIconsInit(icons, current) {
-         icons.forEach((icon, iconIndex) => {
-             icon.classList.toggle("_current", current === iconIndex);
-         });
-     }
+            slides.forEach((slide, i) => {
+                slide.classList.toggle("_active", i === current);
+                slide.classList.remove("glitch");
+            });
 
-     function handleClick(direction) {
-         slides[current].classList.add("glitch");
-         coverFlowClasses("glitch", "glitch", slides)
-         rightBtn.style.pointerEvents = "none";
-         leftBtn.style.pointerEvents = "none";
-         const nextSlideIndex = direction === "left" ? (current === 0 ? slides.length : current) : (current === slides.length - 1 ? 1 : current + 2);
-         if(week === 2){
-             updateGlitchLayers(`url("${path}${nextSlideIndex + 6}/${img}") no-repeat 0 0/contain`, nextSlideIndex);
-         }else{
-             updateGlitchLayers(`url("${path}${nextSlideIndex}/${img}") no-repeat 0 0/contain`, nextSlideIndex);
-         }
-         setTimeout(() => {
-             glitchLayers.forEach(layer => {
-                 layer.classList.forEach(className => {
-                     if (className.startsWith("slide-info-glitch") || className.startsWith("quest")) {
-                         layer.classList.remove(className);
-                     }
-                 });
-             });
-             moveSlider(slides, direction);
-             rightBtn.style.pointerEvents = "initial";
-             leftBtn.style.pointerEvents = "initial";
+            SlideIconsInit(slidesIcons, current);
+        }
 
-             if(coverflow){
-                 slides.forEach(slide =>{
-                     slide.classList.remove("right-cover")
-                     slide.classList.remove("left-cover")
-                     slide.classList.remove("glitch")
-                 })
-                 coverFlowClasses("right-cover", "left-cover", slides)
-             }
-         }, 1000);
-     }
+        function SlideIconsInit(icons, current) {
+            icons.forEach((icon, iconIndex) => {
+                icon.classList.toggle("_current", current === iconIndex);
+            });
+        }
 
-     leftBtn.addEventListener("click", () => handleClick("left"));
-     rightBtn.addEventListener("click", () => handleClick("right"));
+        function handleClick(direction) {
+            slides[current].classList.add("glitch");
+            coverFlowClasses("glitch", "glitch", slides)
+            rightBtn.style.pointerEvents = "none";
+            leftBtn.style.pointerEvents = "none";
+            const nextSlideIndex = direction === "left" ? (current === 0 ? slides.length : current) : (current === slides.length - 1 ? 1 : current + 2);
+            if(week === 2){
+                updateGlitchLayers(`url("${path}${nextSlideIndex + 6}/${img}") no-repeat 0 0/contain`, nextSlideIndex);
+            }else if(week === 3){
+                updateGlitchLayers(`url("${path}${nextSlideIndex + 12}/${img}") no-repeat 0 0/contain`, nextSlideIndex);
+            }else{
+                updateGlitchLayers(`url("${path}${nextSlideIndex}/${img}") no-repeat 0 0/contain`, nextSlideIndex);
+            }
+            setTimeout(() => {
+                glitchLayers.forEach(layer => {
+                    layer.classList.forEach(className => {
+                        if (className.startsWith("slide-info-glitch") || className.startsWith("quest")) {
+                            layer.classList.remove(className);
+                        }
+                    });
+                });
+                moveSlider(slides, direction);
+                rightBtn.style.pointerEvents = "initial";
+                leftBtn.style.pointerEvents = "initial";
+                subtitlesInit(subtitles, slides)
+                if(coverflow){
+                    slides.forEach(slide =>{
+                        slide.classList.remove("right-cover")
+                        slide.classList.remove("left-cover")
+                        slide.classList.remove("glitch")
+                    })
+                    coverFlowClasses("right-cover", "left-cover", slides)
 
-     slidesIcons.forEach((icon, i) => {
-         icon.addEventListener("click", (e) => {
-             if(e.target.classList.contains("_current")) return
-             setTimeout(() => {
-                 slidesIcons.forEach(item => item.classList.remove("_current"));
-             }, 1000);
+                }
+            }, 1000);
+        }
 
-             slides[current].classList.add("glitch");
-             current = i;
-             if(week === 2){
-                 updateGlitchLayers(`url("${path}${current + 7}/${img}") no-repeat 0 0/contain`, current + 1);
-             }
-             else{
-                 updateGlitchLayers(`url("${path}${current + 1}/${img}") no-repeat 0 0/contain`, current + 1);
+        leftBtn.addEventListener("click", () => handleClick("left"));
+        rightBtn.addEventListener("click", () => handleClick("right"));
 
-             }
+        slidesIcons.forEach((icon, i) => {
+            icon.addEventListener("click", (e) => {
+                if(e.target.classList.contains("_current")) return
+                setTimeout(() => {
+                    slidesIcons.forEach(item => item.classList.remove("_current"));
+                }, 1000);
 
-             setTimeout(() => {
-                 SlideIconsInit(slidesIcons, current);
-                 slides.forEach((slide, index) => {
-                     slide.classList.toggle("_active", index === current);
-                     slide.classList.remove("glitch");
-                 });
-                 rightBtn.style.pointerEvents = "initial";
-                 leftBtn.style.pointerEvents = "initial";
+                slides[current].classList.add("glitch");
+                current = i;
+                if(week === 2){
+                    updateGlitchLayers(`url("${path}${current + 7}/${img}") no-repeat 0 0/contain`, current + 1);
+                }else if(week === 3){
+                    updateGlitchLayers(`url("${path}${current + 13}/${img}") no-repeat 0 0/contain`, current + 1);
+                }else{
+                    updateGlitchLayers(`url("${path}${current + 1}/${img}") no-repeat 0 0/contain`, current + 1);
 
-             }, 1000);
-         });
-     });
-     SlideIconsInit(slidesIcons, current);
- }
- function setPopups(popups, popupBtns, closeBtns){
-    popups = document.querySelectorAll(popups)
-    popupBtns = document.querySelectorAll(popupBtns)
-    closeBtns = document.querySelectorAll(closeBtns)
+                }
 
-    popupBtns.forEach(btn =>{
-         btn.addEventListener("click", (e) =>{
-          popups.forEach((popup => {
-              popup.classList.remove("active")
-              if(e.target.parentElement === popup.parentElement){
-                  popup.classList.toggle("active")
-              }
-          }))
-         })
-     })
-    closeBtns.forEach(btn =>{
-         btn.addEventListener("click", (e) =>{
-             popups.forEach((popup => {
-                 popup.classList.remove("active")
-             }))
-         })
-     })
- }
+                setTimeout(() => {
+                    SlideIconsInit(slidesIcons, current);
+                    slides.forEach((slide, index) => {
+                        slide.classList.toggle("_active", index === current);
+                        slide.classList.remove("glitch");
+                        subtitlesInit(subtitles, slides)
+                    });
+                    rightBtn.style.pointerEvents = "initial";
+                    leftBtn.style.pointerEvents = "initial";
+
+                }, 1000);
+            });
+        });
+        SlideIconsInit(slidesIcons, current);
+        subtitlesInit(subtitles, slides)
+
+    }
+    function setPopups(popups, popupBtns, closeBtns){
+        popups = document.querySelectorAll(popups)
+        popupBtns = document.querySelectorAll(popupBtns)
+        closeBtns = document.querySelectorAll(closeBtns)
+
+        popupBtns.forEach(btn =>{
+            btn.addEventListener("click", (e) =>{
+                popups.forEach((popup => {
+                    popup.classList.remove("active")
+                    if(e.target.parentElement === popup.parentElement){
+                        popup.classList.toggle("active")
+                    }
+                }))
+            })
+        })
+        closeBtns.forEach(btn =>{
+            btn.addEventListener("click", (e) =>{
+                popups.forEach((popup => {
+                    popup.classList.remove("active")
+                }))
+            })
+        })
+    }
     const slides = document.querySelectorAll(".slide");
     const slidesIcons = document.querySelectorAll(".quests__icons-item");
+    console.log(week)
     if(week === 1){
         slides.forEach((slide, i) =>{
 
@@ -261,6 +288,15 @@ document.addEventListener("DOMContentLoaded", () =>{
 
         }
     }
+    if(week === 3){
+        for (let i = 1; i <= 12; i++){
+            let week2 = document.querySelectorAll(`.quest${i}`)
+            week2.forEach(item => {
+                item.remove()
+            })
+
+        }
+    }
     let questsPath = "./img/quests/slide"
     function checkMediaQueries(oldPath, newPath) {
         const mediaQuery600 = window.matchMedia("(max-width: 600px)");
@@ -272,51 +308,74 @@ document.addEventListener("DOMContentLoaded", () =>{
             oldPath = newPath;
         }
         else {
-           oldPath = newPath;
+            oldPath = newPath;
         }
         return oldPath
     }
     questsPath = checkMediaQueries(questsPath, "./img/quests/mob/slide")
 
-    createSlider(".slide", ".slide__move-left", ".slide__move-right", ".quests__icons-item", 1,questsPath, "pers.png", week )
-    createSlider(".prize__slide", ".prize__move-left", ".prize__move-right", ".prize__icons-item", 1,"./img/prize/slide", "prize.png", null, true , 1150)
+    createSlider(".slide", ".slide__move-left", ".slide__move-right", ".quests__icons-item", 1,questsPath, "pers.png", week, false, null, ".quests__subtitle")
+    // createSlider(".prize__slide", ".prize__move-left", ".prize__move-right", ".prize__icons-item", 1,"./img/prize/slide", "prize.png", null, true , 1150)
     setPopups(".guide__info", ".guide__info-btn", ".guide__info-close")
-    setPopups(".prize__slide-popup", ".prize__slide-info-btn", ".prize__slide-close")
+    // setPopups(".prize__slide-popup", ".prize__slide-info-btn", ".prize__slide-close")
     setPopups(".table__info-popup", ".table__info", ".table__info-close")
 
-    const tableTabs = document.querySelectorAll(".table__list-item")
-    const tables = document.querySelectorAll(".table__item")
+//table tabs
+    function activateTabs(tabs, tables, activeClass) {
+        const stageState = {};
 
-    tableTabs.forEach((tab, tabIndex) =>{
-        tab.addEventListener("click", (e) =>{
-            tableTabs.forEach((item) =>{
-                item.classList.remove("active")
-                tab.classList.add("active")
-            })
-            tables.forEach((table, tableIndex) =>{
-                table.classList.remove("active")
-                if(tableIndex ===  tabIndex){
-                    table.classList.add("active")
+        tabs.forEach((tab, tabIndex) => {
+            tab.addEventListener("click", () => {
+                tabs.forEach(item => item.classList.remove(activeClass));
+                tab.classList.add(activeClass);
+                tables.forEach(table => table.classList.remove(activeClass));
+                if (tables[tabIndex]) {
+                    tables[tabIndex].classList.add(activeClass);
                 }
-            })
-        })
-    })
+                const allStageTabs = tables[tabIndex].querySelectorAll(".table__stage-tabs-item");
+                const allStages = tables[tabIndex].querySelectorAll(".table__stage");
 
-    const prizeRightBtn = document.querySelector(".prize__move-right")
-    const prizeLeftBtn = document.querySelector(".prize__move-left")
-    const prizePopups = document.querySelectorAll(".prize__slide-popup")
+                allStageTabs.forEach(stageTab => stageTab.classList.remove(activeClass));
+                allStages.forEach(stage => stage.classList.remove(activeClass));
 
-    function closeDrop(drops){
-        drops.forEach(drop =>{
-            drop.classList.remove("active")
-        })
+                const savedStageIndex = stageState[tabIndex] || 0;
+
+                if (allStageTabs[savedStageIndex] && allStages[savedStageIndex]) {
+                    allStageTabs[savedStageIndex].classList.add(activeClass);
+                    allStages[savedStageIndex].classList.add(activeClass);
+                }
+            });
+        });
+
+        tables.forEach((table, tableIndex) => {
+            const stageTabs = table.querySelectorAll(".table__stage-tabs-item");
+            const stages = table.querySelectorAll(".table__stage");
+
+            stageTabs.forEach((tab, tabIndex) => {
+                tab.addEventListener("click", () => {
+                    stageTabs.forEach(item => item.classList.remove(activeClass));
+                    tab.classList.add(activeClass);
+                    stages.forEach(stage => stage.classList.remove(activeClass));
+                    if (stages[tabIndex]) {
+                        stages[tabIndex].classList.add(activeClass);
+                    }
+                    stageState[tableIndex] = tabIndex;
+                });
+            });
+        });
     }
-    prizeRightBtn.addEventListener("click", () =>{
-        closeDrop(prizePopups)
-    })
-    prizeLeftBtn.addEventListener("click", () =>{
-        closeDrop(prizePopups)
-    })
+
+    const tableTabs = document.querySelectorAll(".table__list-item");
+    const tables = document.querySelectorAll(".table__item");
+
+    activateTabs(tableTabs, tables, "active");
+
+    if (tableTabs[0]) {
+        tableTabs[0].click();
+    }
+
+
+
 
 /// анімація динамічного набору текст
     function dynamicTypewriter(element, speed, callback) {
@@ -395,14 +454,9 @@ document.addEventListener("DOMContentLoaded", () =>{
     progressAnim(40, progressBar, progressWrap, 40)
 
 // popups
-    const tablePopupBtn = document.querySelector(".table__btn")
     const closePopups = document.querySelector(".popups__close")
     const popupsWrap = document.querySelector(".popups")
 
-    tablePopupBtn.addEventListener("click", () =>{
-        popupsWrap.classList.add("_table")
-        document.body.classList.add("_overflow-hidden")
-    })
     closePopups.addEventListener("click", () =>{
         popupsWrap.classList.remove("_table")
         popupsWrap.classList.remove("_done")
@@ -430,6 +484,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     const week1 = document.querySelector(".week1");
     const week2 = document.querySelector(".week2");
+    const week3 = document.querySelector(".week3");
 
     week1.addEventListener("click", () => {
         localStorage.setItem("week", 1);
@@ -438,6 +493,10 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     week2.addEventListener("click", () => {
         localStorage.setItem("week", 2);
+        location.reload();
+    });
+    week3.addEventListener("click", () => {
+        localStorage.setItem("week", 3);
         location.reload();
     });
 })

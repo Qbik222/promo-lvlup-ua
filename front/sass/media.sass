@@ -28,9 +28,6 @@
   .info
     &__left
       margin: -75px -230px 0 -170px
-  .prize
-    &__slider
-      transform: scale(.85)
 
 @media screen and (max-width: 1200px)
   .quests
@@ -48,62 +45,6 @@
   .guide
     &__list
       max-width: 1000px
-  .prize
-    &__slider
-      transform: scale(1)
-      flex-direction: column
-      margin-top: 60px
-    &__slide
-      &.right-cover, &.left-cover
-        display: none
-    &__icons
-      display: flex
-      opacity: 1
-      gap: 15px
-      padding: 0 30px
-      &-wrap
-        display: flex
-        align-items: center
-        min-height: 80px
-        max-width: 100vw
-        overflow: auto
-        z-index: 3
-        opacity: 1
-      &-item
-        width: 51px
-        height: 50px
-        user-select: none
-        transition: background .4s ease-in-out
-        &:hover
-          cursor: pointer
-        &._current
-          transform: scale(1.3)
-          &:hover
-            cursor: default
-          &:nth-child(1)
-            background: url("../img/prize/slide1/icon-prize-hover.png") 0 0/contain
-          &:nth-child(2)
-            background: url("../img/prize/slide2/icon-prize-hover.png") 0 0/contain
-          &:nth-child(3)
-            background: url("../img/prize/slide3/icon-prize-hover.png") 0 0/contain
-          &:nth-child(4)
-            background: url("../img/prize/slide4/icon-prize-hover.png") 0 0/contain
-          &:nth-child(5)
-            background: url("../img/prize/slide5/icon-prize-hover.png") 0 0/contain
-          &:nth-child(6)
-            background: url("../img/prize/slide6/icon-prize-hover.png") 0 0/contain
-        &:nth-child(1)
-          background: url("../img/prize/slide1/icon-prize.png") 0 0/contain
-        &:nth-child(2)
-          background: url("../img/prize/slide2/icon-prize.png") 0 0/contain
-        &:nth-child(3)
-          background: url("../img/prize/slide3/icon-prize.png") 0 0/contain
-        &:nth-child(4)
-          background: url("../img/prize/slide4/icon-prize.png") 0 0/contain
-        &:nth-child(5)
-          background: url("../img/prize/slide5/icon-prize.png") 0 0/contain
-        &:nth-child(6)
-          background: url("../img/prize/slide6/icon-prize.png") 0 0/contain
 
 @media screen and (max-width: 1050px)
   ._container
@@ -160,20 +101,18 @@
     align-items: center
     max-width: 100%
     width: 100%
+    &::before
+      right: -80px
     &__subtitle
       max-width: 550px
     &__pers
-      right: 0
+      right: -100px
     &__wrap, &__list, &__btn, &__bottom
       margin-right: auto
       margin-left: 100px
     &__bottom
       font-size: 14px
       line-height: 14px
-  .prize
-    &__title
-      font-size: 46px
-      line-height: 74px
 
 @media screen and (max-width: 880px)
   ._container
@@ -206,24 +145,23 @@
         top: 50%
         left: 10.5%
   .table
+    &::before
+      top: -50px
+      right: -200px
     &__pers
-      min-width: 400px
-      max-width: 400px
-      right: -80px
+      min-width: 555px
+      max-width: 505px
+      right: -160px
+      top: 75px
     &__wrap, &__list, &__btn, &__bottom
       margin-left: 50px
     &__info
       margin-right: 30px
-  .prize
-    &__move
-      &-right, &-left
-        width: 38px
-        height: 84px
 
 @media screen and (max-width: 755px)
   .table
     &__pers
-      right: -110px
+      right: -170px
 
 @media screen and (max-width: 720px)
   .info
@@ -238,7 +176,7 @@
       transform: scale(.67)
   .table
     &__pers
-      right: -130px
+      right: -150px
   .popups
     &._done
       .popups
@@ -472,10 +410,10 @@
             top: 0
           &__layer
             margin: 0
-            &.quest1, &.quest2, &.quest3, &.quest4, &.quest5, &.quest6, &.quest7, &.quest8, &.quest9, &.quest10, &.quest11, &.quest12
+            &.quest1, &.quest2, &.quest3, &.quest4, &.quest5, &.quest6, &.quest7, &.quest8, &.quest9, &.quest10, &.quest11, &.quest12, &.quest13, &.quest14, &.quest15, &.quest16, &.quest17, &.quest18
               width: 100%
               height: 100%
-        &.quest1, &.quest2, &.quest3, &.quest4, &.quest5, &.quest6, &.quest7, &.quest8, &.quest9, &.quest10, &.quest11, &.quest12
+        &.quest1, &.quest2, &.quest3, &.quest4, &.quest5, &.quest6, &.quest7, &.quest8, &.quest9, &.quest10, &.quest11, &.quest12, &.quest13, &.quest14, &.quest15, &.quest16, &.quest17, &.quest18
           .glitch
             &__layer
               left: 0
@@ -519,6 +457,18 @@
             height: 400px
             left: 57%
             top: -30px
+        &.quest9
+          &::before
+            width: 600px
+            height: 400px
+            left: 52%
+            top: -30px
+        &.quest12, &.quest15, &.quest18
+          &::before
+            width: 600px
+            height: 400px
+            left: 54%
+            top: -30px
         &__progress
           bottom: auto
           top: 280px
@@ -541,16 +491,25 @@
     height: auto
     padding-bottom: 30px
     &::before
-      width: 420px
-      height: 302px
-      top: 20%
+      width: 561px
+      height: 366px
+      top: -23%
+      left: 50%
+      right: auto
+      transform: translate(-50%, 0)
     &__subtitle
       font-size: 17px
       line-height: 20px
       max-width: 320px
       order: 2
+    &__row
+      &-item
+        &:nth-child(4), &:nth-child(1)
+          font-size: 18px
+          line-height: 20px
     &__title
       order: 1
+      margin-top: -60px
     &__wrap, &__list, &__btn, &__bottom
       margin: 0
     &__info
@@ -558,26 +517,19 @@
       &-popup
         right: 50%
         transform: translate(50%, 0)
-    &__btn
-      &-wrap
-        max-width: 340px
-        min-width: 340px
-        margin-top: 15px
-        order: 4
-        justify-content: space-between
     &__list
-      min-width: 340px
-      max-width: 340px
+      min-width: 360px
+      max-width: 360px
       padding: 0 5px
       order: 4
-      margin-top: 20px
+      margin-top: 0
       &-item
         font-size: 17px
         &:not(:last-child)
           margin-right: 15px
     &__wrap
-      min-width: 340px
-      max-width: 340px
+      min-width: 360px
+      max-width: 360px
       order: 5
     &__bottom
       min-width: 340px
@@ -590,40 +542,6 @@
       right: 0
       order: 0
       margin-top: -210px
-  .prize
-    max-width: 100%
-    &__subtitle
-      max-width: 310px
-      font-size: 17px
-      line-height: 20px
-    &__slider
-      min-width: 100%
-      max-width: 100%
-      max-height: 580px
-      min-height: 580px
-      margin-top: 35px
-      &::before
-        height: 600px
-        left: 50%
-        transform: translate(-50%, 0)
-        width: 860px
-        bottom: 50px
-      &-wrap
-        max-width: 100%
-        margin-bottom: -30px
-    &__slide
-      padding-bottom: 100px
-      margin-top: -30px
-      &-img
-        max-height: 400px
-        min-height: 400px
-        display: flex
-        align-items: center
-      &-popup
-        top: 140px
-    &__move
-      max-width: 100%
-      padding: 0 15px
   .drop
     padding: 0 10px
     summary
@@ -673,16 +591,14 @@
       min-width: 360px
       transform: scale(.9)
       margin: -10px 0 -80px 0
-  .prize
-    &__slide
-      &-popup
-        transform: scale(.8) translate(-50%, -100%)
-        transform-origin: left top
   .popups
     &._table
       .popups
         &__table
           transform: scale(.9)
+  .table
+    transform: scale(.85)
+    margin: -110px 0 -70px 0
 
 @media screen and (max-width: 350px)
   .quests
@@ -698,28 +614,23 @@
   .table
     transform: scale(.9)
     margin: -100px 0 -50px 0
-  .prize
-    &__move
-      &-left,&-right
-        width: 30px
-        height: 60px
-    &__slide
-      &-img
-        min-width: 295px
 
 @media screen and (max-width: 335px)
   .btn
     font-size: 18px
-    padding: 30px 11px 24px 15px
+    padding: 30px 51px 24px 55px
     &::before
       top: 49%
   .title
-    font-size: 18px
+    font-size: 17px
   .guide
     &__title
       font-size: 17px
     &__list
       transform: scale(.8)
+      &-item
+        &-num
+          font-size: 40px
   .quests
     &__slider
       .slide
@@ -738,14 +649,8 @@
           &::after
             top: 1px
   .table
-    transform: scale(.85)
-    margin: -110px 0 -70px 0
-  .prize
-    &__slide
-      &-info
-        &-title
-          font-size: 14px
-          line-height: 20px
+    transform: scale(.75)
+    margin: -200px 0 -150px 0
   .popups
     &._table
       .popups
