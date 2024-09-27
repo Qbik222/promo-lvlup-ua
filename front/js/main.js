@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     })
 
 /// гліч слайдер
- function createSlider(slides, leftBtn, rightBtn, slidesIcons, current, path, img, week, coverflow, coverflowOffWidth){
+ function createSlider(slides, leftBtn, rightBtn, slidesIcons, current, path, img, week, coverflow, coverflowOffWidth, subtitles){
      let coverflowToggler = true
      if(window.innerWidth < coverflowOffWidth){
          coverflowToggler = false
@@ -88,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () =>{
          })
      }
      slides = document.querySelectorAll(slides);
+     subtitles = document.querySelectorAll(subtitles);
      leftBtn = document.querySelector(leftBtn);
      rightBtn = document.querySelector(rightBtn);
      slidesIcons = document.querySelectorAll(slidesIcons);
@@ -98,6 +99,21 @@ document.addEventListener("DOMContentLoaded", () =>{
      slides[current].classList.add("_active");
      if(coverflow){
          coverFlowClasses("right-cover", "left-cover", slides)
+     }
+
+     function subtitlesInit(subtitles, slides){
+         console.log(slides)
+         slides.forEach((slide, slideIndex) =>{
+             if(slide.classList.contains("_active")){
+                 subtitles.forEach((subtitle, subtitleIndex) =>{
+                     subtitle.classList.remove("_active")
+                     if(slideIndex === subtitleIndex){
+                         subtitle.classList.add("_active")
+                     }
+                 })
+             }
+
+         })
      }
      function updateGlitchLayers(path, index) {
          if(week === 2){
@@ -168,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () =>{
              moveSlider(slides, direction);
              rightBtn.style.pointerEvents = "initial";
              leftBtn.style.pointerEvents = "initial";
-
+             subtitlesInit(subtitles, slides)
              if(coverflow){
                  slides.forEach(slide =>{
                      slide.classList.remove("right-cover")
@@ -176,6 +192,7 @@ document.addEventListener("DOMContentLoaded", () =>{
                      slide.classList.remove("glitch")
                  })
                  coverFlowClasses("right-cover", "left-cover", slides)
+
              }
          }, 1000);
      }
@@ -205,6 +222,7 @@ document.addEventListener("DOMContentLoaded", () =>{
                  slides.forEach((slide, index) => {
                      slide.classList.toggle("_active", index === current);
                      slide.classList.remove("glitch");
+                     subtitlesInit(subtitles, slides)
                  });
                  rightBtn.style.pointerEvents = "initial";
                  leftBtn.style.pointerEvents = "initial";
@@ -213,6 +231,8 @@ document.addEventListener("DOMContentLoaded", () =>{
          });
      });
      SlideIconsInit(slidesIcons, current);
+     subtitlesInit(subtitles, slides)
+
  }
  function setPopups(popups, popupBtns, closeBtns){
     popups = document.querySelectorAll(popups)
@@ -278,7 +298,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     }
     questsPath = checkMediaQueries(questsPath, "./img/quests/mob/slide")
 
-    createSlider(".slide", ".slide__move-left", ".slide__move-right", ".quests__icons-item", 1,questsPath, "pers.png", week )
+    createSlider(".slide", ".slide__move-left", ".slide__move-right", ".quests__icons-item", 1,questsPath, "pers.png", week, false, null, ".quests__subtitle")
     createSlider(".prize__slide", ".prize__move-left", ".prize__move-right", ".prize__icons-item", 1,"./img/prize/slide", "prize.png", null, true , 1150)
     setPopups(".guide__info", ".guide__info-btn", ".guide__info-close")
     setPopups(".prize__slide-popup", ".prize__slide-info-btn", ".prize__slide-close")
