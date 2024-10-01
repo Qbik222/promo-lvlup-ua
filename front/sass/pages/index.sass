@@ -1936,10 +1936,35 @@ body.light
       display: flex
       flex-direction: column
       gap: 15px
-      p, strong
+      p
         font-family: $font-suisse-intl-reg
-        font-size: 17px
-        line-height: 27px
+      a
+        color: $white
+        font-family: $font-suisse-intl-reg
+        text-decoration: underline
+        &:hover
+          text-decoration: none
+      table
+        border-collapse: collapse
+      tr,th,td
+        font-family: $font-suisse-intl-reg
+      tr,td
+        border: 1px solid $white
+      .circle
+        padding-left: 30px
+        &:before
+          content: ''
+          width: 5px
+          height: 5px
+          background: $white
+          border-radius: 50%
+          display: inline-block
+          margin: 0 4px 3px 0
+      .retreat1
+        padding-left: 15px
+      .retreat2
+        padding-left: 30px
+
 .bottom
   width: 100%
   padding-top: 300px
