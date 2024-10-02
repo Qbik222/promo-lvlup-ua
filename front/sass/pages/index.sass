@@ -169,7 +169,7 @@ body.light
     font-family: $font-handjet-exlight
     opacity: .5
     letter-spacing: 0
-    margin: 30px auto 0 auto
+    margin: 30px auto -20px auto
   &__wrap
     display: flex
     align-items: flex-start
@@ -1307,7 +1307,7 @@ body.light
             animation: glitch-anim-2 2.3s -.8s linear alternate
           &:nth-child(3)
             animation: glitch-anim-flash 1s linear
-      &__lock, &__done
+      &__lock, &__done, &__undone
         display: none
         position: absolute
         top: 52%
@@ -1357,8 +1357,14 @@ body.light
                   text-align: center
       &._lock
         .slide
-          &__lock
+          display: flex
+      &._undone
+        .slide
+          &__undone
             display: flex
+      &._lock, &._undone
+        .slide
+          &__lock, &__undone
             &-title
               background: url("https://fav-prom.com/html/level-up-game-ua/img/lock-bg.png") no-repeat 0 0/cover
               background-size: 100% 100%
