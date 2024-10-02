@@ -208,25 +208,38 @@
          coverflowToggler = false
      }
 
-     function coverFlowClasses(right, left, slides){
-         slides.forEach((slide, i) =>{
-             if(coverflowToggler){
-                 if(current === i){
-                     if(slide.previousElementSibling === null){
-                         slides[slides.length -1].classList.add(right)
-                     }else{
-                         slide.previousElementSibling.classList.add(right)
-                     }
-                     if(slide.nextSibling === null){
-                         slides[0].classList.add(left)
-                     }
-                     else{
-                         slide.nextSibling.classList.add(left)
-                     }
+     // function coverFlowClasses(right, left, slides){
+     //     slides.forEach((slide, i) =>{
+     //         if(coverflowToggler){
+     //             if(current === i){
+     //                 if(slide.previousElementSibling === null){
+     //                     slides[slides.length -1].classList.add(right)
+     //                 }else{
+     //                     slide.previousElementSibling.classList.add(right)
+     //                 }
+     //                 if(slide.nextSibling === null){
+     //                     slides[0].classList.add(left)
+     //                 }
+     //                 else{
+     //                     slide.nextSibling.classList.add(left)
+     //                 }
+     //             }
+     //         }
+     //     })
+     // }
+     function coverFlowClasses(right, left, slides) {
+         slides.forEach((slide, i) => {
+             if (coverflowToggler) {
+                 if (current === i) {
+                     let prevIndex = (i - 1 + slides.length) % slides.length;
+                     slides[prevIndex].classList.add(right);
+                     let nextIndex = (i + 1) % slides.length;
+                     slides[nextIndex].classList.add(left);
                  }
              }
-         })
+         });
      }
+
      slides = document.querySelectorAll(slides);
      subtitles = document.querySelectorAll(subtitles);
      leftBtn = document.querySelector(leftBtn);
@@ -270,32 +283,69 @@
 
              if (layer.parentElement.parentElement.classList[0] !== "slide__info") {
                  // console.log(direction)
+                 // if (copySlides) {
+                 //     let nextClass, prevClass, currentClass;
+                 //
+                 //     if (slides[current].nextSibling) {
+                 //         nextClass = slides[current].nextSibling.classList[1];
+                 //     }
+                 //     if (slides[current].previousElementSibling) {
+                 //         prevClass = slides[current].previousElementSibling.classList[1];
+                 //     }
+                 //     currentClass = slides[current].classList[1];
+                 //
+                 //     switch (true) {
+                 //         case (direction === "right" && nextClass && nextClass !== currentClass):
+                 //             layer.classList.add(nextClass);
+                 //             break;
+                 //
+                 //         case (direction === "left" && prevClass && prevClass !== currentClass):
+                 //             layer.classList.add(prevClass);
+                 //             break;
+                 //
+                 //         case (direction === "left" && slides[current].previousElementSibling === null):
+                 //             layer.classList.add(`${slides[slides.length - 1].classList[1]}`);
+                 //             break;
+                 //
+                 //         case (direction === "right" && slides[current].nextSibling === null):
+                 //             layer.classList.add(`${slides[1].classList[1]}`);
+                 //             break;
+                 //
+                 //         default:
+                 //             layer.classList.add(currentClass);
+                 //             break;
+                 //     }
+                 // }
+
                  if (copySlides) {
                      let nextClass, prevClass, currentClass;
 
-                     if (slides[current].nextSibling) {
-                         nextClass = slides[current].nextSibling.classList[1];
-                     }
-                     if (slides[current].previousElementSibling) {
-                         prevClass = slides[current].previousElementSibling.classList[1];
-                     }
+                     // Визначаємо класи для поточного слайда, попереднього і наступного
                      currentClass = slides[current].classList[1];
 
+                     // Визначаємо індекси для наступного і попереднього слайда
+                     let nextIndex = (current + 1) % slides.length; // Наступний слайд (якщо current — останній, тоді повертаємось до початку)
+                     let prevIndex = (current - 1 + slides.length) % slides.length; // Попередній слайд (якщо current — перший, тоді переходимо на останній)
+
+                     // Визначаємо класи для наступного і попереднього слайда
+                     nextClass = slides[nextIndex].classList[1];
+                     prevClass = slides[prevIndex].classList[1];
+
                      switch (true) {
-                         case (direction === "right" && nextClass && nextClass !== currentClass):
+                         case (direction === "right" && nextClass !== currentClass):
                              layer.classList.add(nextClass);
                              break;
 
-                         case (direction === "left" && prevClass && prevClass !== currentClass):
+                         case (direction === "left" && prevClass !== currentClass):
                              layer.classList.add(prevClass);
                              break;
 
-                         case (direction === "left" && slides[current].previousElementSibling === null):
-                             layer.classList.add(`${slides[slides.length - 1].classList[1]}`);
+                         case (direction === "left" && current === 0):
+                             layer.classList.add(slides[slides.length - 1].classList[1]);
                              break;
 
-                         case (direction === "right" && slides[current].nextSibling === null):
-                             layer.classList.add(`${slides[1].classList[1]}`);
+                         case (direction === "right" && current === slides.length - 1):
+                             layer.classList.add(slides[0].classList[1]);
                              break;
 
                          default:
