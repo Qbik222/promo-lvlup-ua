@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () =>{
      }
 
      function subtitlesInit(subtitles, slides){
-         console.log(slides)
+         // console.log(slides)
          slides.forEach((slide, slideIndex) =>{
              if(slide.classList.contains("_active")){
                  subtitles.forEach((subtitle, subtitleIndex) =>{
@@ -129,24 +129,42 @@ document.addEventListener("DOMContentLoaded", () =>{
              let questNumber = getSlideNum(slides[current]);
 
              if (layer.parentElement.parentElement.classList[0] !== "slide__info") {
-                 console.log(direction)
-                 if(copySlides){
-                     console.log(slides[current].previousElementSibling)
-                     if(slides[current].nextSibling !== null && slides[current].nextSibling.classList[1] !== slides[current].classList[1] && direction === "right"){
-                         layer.classList.add(`${slides[current].nextSibling.classList[1]}`);
+                 // console.log(direction)
+                 if (copySlides) {
+                     let nextClass, prevClass, currentClass;
+
+                     if (slides[current].nextSibling) {
+                         nextClass = slides[current].nextSibling.classList[1];
                      }
-                     else if(slides[current].previousElementSibling !== null && slides[current].previousElementSibling.classList[1] !== slides[current].classList[1] && direction === "left"){
-                         layer.classList.add(`${slides[current].previousElementSibling.classList[1]}`);
-                     }else if(slides[current].previousElementSibling === null && direction === "left"){
-                         layer.classList.add(`${slides[slides.length - 1].classList[1]}`);
+                     if (slides[current].previousElementSibling) {
+                         prevClass = slides[current].previousElementSibling.classList[1];
                      }
-                     else if(slides[current].nextSibling === null && direction === "right"){
-                         layer.classList.add(`${slides[1].classList[1]}`);
+                     currentClass = slides[current].classList[1];
+
+                     switch (true) {
+                         case (direction === "right" && nextClass && nextClass !== currentClass):
+                             layer.classList.add(nextClass);
+                             break;
+
+                         case (direction === "left" && prevClass && prevClass !== currentClass):
+                             layer.classList.add(prevClass);
+                             break;
+
+                         case (direction === "left" && slides[current].previousElementSibling === null):
+                             layer.classList.add(`${slides[slides.length - 1].classList[1]}`);
+                             break;
+
+                         case (direction === "right" && slides[current].nextSibling === null):
+                             layer.classList.add(`${slides[1].classList[1]}`);
+                             break;
+
+                         default:
+                             layer.classList.add(currentClass);
+                             break;
                      }
-                     else{
-                         layer.classList.add(`${slides[current].classList[1]}`);
-                     }
-                 }else{
+                 }
+
+                 else{
                      layer.style.background = path;
                  }
 
@@ -185,13 +203,18 @@ document.addEventListener("DOMContentLoaded", () =>{
      }
 
      function SlideIconsInit(icons, current) {
+         const wrapper = icons[0].parentElement.parentElement;
+         // console.log(wrapper)
+
          icons.forEach((icon, iconIndex) => {
              icon.classList.toggle("_current", current === iconIndex);
              if (current === iconIndex) {
-                 icon.scrollIntoView({
-                     behavior: 'smooth',
-                     block: 'center',
-                     inline: 'center'
+                 const iconOffsetLeft = icon.offsetLeft;
+                 const iconWidth = icon.offsetWidth;
+                 const wrapperWidth = wrapper.offsetWidth;
+                 wrapper.scrollTo({
+                     left: iconOffsetLeft - (wrapperWidth / 2) + (iconWidth / 2),
+                     behavior: 'smooth'
                  });
              }
          });
