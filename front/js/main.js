@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () =>{
      slides.forEach(slide => {
          glitchLayers = [...glitchLayers, ...slide.querySelectorAll(".glitch__layer")];
      });
-     slides[current].classList.add("_active");
+     if(slides[current])slides[current].classList.add("_active");
      if(coverflow){
          coverFlowClasses("right-cover", "left-cover", slides)
      }
@@ -119,7 +119,6 @@ document.addEventListener("DOMContentLoaded", () =>{
          if(week === 2){
              index += 6
          }
-         console.log(index)
          glitchLayers.forEach(layer => {
              layer.classList.forEach(className => {
                  if (className.startsWith("slide-info-glitch")) {
@@ -259,28 +258,28 @@ document.addEventListener("DOMContentLoaded", () =>{
  }
     const slides = document.querySelectorAll(".slide");
     const slidesIcons = document.querySelectorAll(".quests__icons-item");
-    if(week === 1){
-        slides.forEach((slide, i) =>{
-
-            if(i >= 6 || slide.classList.contains(`quest${i}`)){
-                slide.remove()
-            }
-        })
-        slidesIcons.forEach((icon, i) =>{
-            if(i >= 6 || icon.classList.contains(`quest${i}`)){
-                icon.remove()
-            }
-        })
-    }
-    if(week === 2){
-        for (let i = 1; i <= 6; i++){
-            let week1 = document.querySelectorAll(`.quest${i}`)
-            week1.forEach(item => {
-                item.remove()
-            })
-
-        }
-    }
+    // if(week === 1){
+    //     slides.forEach((slide, i) =>{
+    //
+    //         if(i >= 6 || slide.classList.contains(`quest${i}`)){
+    //             slide.remove()
+    //         }
+    //     })
+    //     slidesIcons.forEach((icon, i) =>{
+    //         if(i >= 6 || icon.classList.contains(`quest${i}`)){
+    //             icon.remove()
+    //         }
+    //     })
+    // }
+    // if(week === 2){
+    //     for (let i = 1; i <= 6; i++){
+    //         let week1 = document.querySelectorAll(`.quest${i}`)
+    //         week1.forEach(item => {
+    //             item.remove()
+    //         })
+    //
+    //     }
+    // }
     let questsPath = "./img/quests/slide"
     function checkMediaQueries(oldPath, newPath) {
         const mediaQuery600 = window.matchMedia("(max-width: 600px)");
@@ -298,7 +297,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     }
     questsPath = checkMediaQueries(questsPath, "./img/quests/mob/slide")
 
-    createSlider(".slide", ".slide__move-left", ".slide__move-right", ".quests__icons-item", 1,questsPath, "pers.png", week, false, null, ".quests__subtitle")
+    createSlider(".slide", ".slide__move-left", ".slide__move-right", ".quests__icons-item", 1,questsPath, "pers.png", null, false, null, ".quests__subtitle")
     createSlider(".prize__slide", ".prize__move-left", ".prize__move-right", ".prize__icons-item", 1,"./img/prize/slide", "prize.png", null, true , 1150)
     setPopups(".guide__info", ".guide__info-btn", ".guide__info-close")
     setPopups(".prize__slide-popup", ".prize__slide-info-btn", ".prize__slide-close")

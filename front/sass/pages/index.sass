@@ -447,10 +447,15 @@ body.light
     display: flex
     align-items: center
     justify-content: center
+    flex-shrink: 0
     &-wrap
       margin-top: 25px
       position: relative
       z-index: 2
+      max-width: 460px
+      overflow-x: auto
+      display: flex
+      height: 100px
     &-item
       width: 51px
       height: 50px
