@@ -1,4 +1,144 @@
-document.addEventListener("DOMContentLoaded", () =>{
+(function () {
+    const apiURL = 'https://fav-prom.com/api_level_up_game_ua';
+
+    const
+        unauthMsg = document.querySelector('.unauth-msg'),
+        participateBtn = document.querySelector('.btn-join'),
+        redirectBtns = document.querySelector('.took-part');
+
+    let locale = 'uk';
+
+    const ukLeng = document.querySelector('#ukLeng');
+    const enLeng = document.querySelector('#enLeng');
+
+    if (ukLeng) locale = 'uk';
+    if (enLeng) locale = 'en';
+
+    let i18nData = {};
+    let userId;
+    // userId = 100300268;
+
+    function loadTranslations() {
+        return fetch(`${apiURL}/translates/${locale}`).then(res => res.json())
+            .then(json => {
+                i18nData = json;
+                translate();
+            });
+    }
+
+    function translate() {
+        const elems = document.querySelectorAll('[data-translate]');
+        if (elems && elems.length) {
+            elems.forEach(elem => {
+                const key = elem.getAttribute('data-translate');
+                elem.innerHTML = i18nData[key] || '*----NEED TO BE TRANSLATED----*   key:  ' + key;
+                elem.removeAttribute('data-translate');
+            });
+        }
+        if (locale === 'en') {
+            mainPage.classList.add('en');
+        }
+        refreshLocalizedClass();
+
+        // Після перекладу викликаємо функцію спостереження
+        const typeAnim = document.querySelectorAll('.type-anim');
+        observeElements(typeAnim); // Запускаємо спостереження тільки після завершення перекладу
+    }
+
+    function refreshLocalizedClass(element, baseCssClass) {
+        if (!element) {
+            return;
+        }
+        for (const lang of ['uk', 'en']) {
+            element.classList.remove(baseCssClass + lang);
+        }
+        element.classList.add(baseCssClass + locale);
+    }
+
+    const request = function (link, extraOptions) {
+        return fetch(apiURL + link, {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            ...(extraOptions || {})
+        }).then(res => res.json());
+    }
+
+    function init() {
+        if (window.store) {
+            var state = window.store.getState();
+            userId = state.auth.isAuthorized && state.auth.id || '';
+            setupPage();
+        } else {
+            setupPage();
+            let c = 0;
+            var i = setInterval(function () {
+                if (c < 50) {
+                    if (!!window.g_user_id) {
+                        userId = window.g_user_id;
+                        setupPage();
+                        checkUserAuth();
+                        clearInterval(i);
+                    }
+                } else {
+                    clearInterval(i);
+                }
+            }, 200);
+        }
+
+        checkUserAuth();
+
+        if (participateBtn) {
+            participateBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                participate();
+            });
+        }
+    }
+
+    function setupPage() {}
+
+    function participate() {
+        if (!userId) {
+            return;
+        }
+
+        const params = { userid: userId };
+        request('/user', {
+            method: 'POST',
+            body: JSON.stringify(params)
+        }).then(res => {
+            participateBtn.classList.add('hide');
+            redirectBtns.classList.remove('hide');
+            setupPage();
+        });
+    }
+
+    function checkUserAuth() {
+        if (userId) {
+            unauthMsg.classList.add('hide');
+            request(`/favuser/${userId}?nocache=1`)
+                .then(res => {
+                    if (res.userid) {
+                        participateBtn.classList.add('hide');
+                        redirectBtns.classList.remove('hide');
+                    } else {
+                        participateBtn.classList.remove('hide');
+                    }
+                });
+        } else {
+            participateBtn.classList.add('hide');
+            unauthMsg.classList.remove('hide');
+        }
+    }
+
+    loadTranslations().then(init);
+
+    let mainPage = document.querySelector('.fav-page');
+    setTimeout(() => mainPage.classList.add('_overflow-hidden'), 1000);
+
+    //Yura Code
     window.addEventListener("orientationchange", () =>{
         location.reload()
     })
@@ -339,7 +479,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     //
     //     }
     // }
-    let questsPath = "./img/quests/slide"
+    let questsPath = "https://fav-prom.com/html/level-up-game-ua/img/quests/slide"
     function checkMediaQueries(oldPath, newPath) {
         const mediaQuery600 = window.matchMedia("(max-width: 600px)");
         const mediaQuery950Landscape = window.matchMedia("(max-width: 950px) and (max-height: 600px) and (orientation: landscape)");
@@ -354,10 +494,10 @@ document.addEventListener("DOMContentLoaded", () =>{
         }
         return oldPath
     }
-    questsPath = checkMediaQueries(questsPath, "./img/quests/mob/slide")
+    questsPath = checkMediaQueries(questsPath, "https://fav-prom.com/html/level-up-game-ua/img/quests/mob/slide")
 
     createSlider(".slide", ".slide__move-left", ".slide__move-right", ".quests__icons-item", 1,questsPath, "pers.png", null, false, null, ".quests__subtitle", true)
-    createSlider(".prize__slide", ".prize__move-left", ".prize__move-right", ".prize__icons-item", 1,"./img/prize/slide", "prize.png", null, true , 1150, false)
+    createSlider(".prize__slide", ".prize__move-left", ".prize__move-right", ".prize__icons-item", 1,"https://fav-prom.com/html/level-up-game-ua/img/prize/slide", "prize.png", null, true , 1150, false)
     setPopups(".guide__info", ".guide__info-btn", ".guide__info-close")
     setPopups(".prize__slide-popup", ".prize__slide-info-btn", ".prize__slide-close")
     setPopups(".table__info-popup", ".table__info", ".table__info-close")
@@ -433,6 +573,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         element.classList.add('typewriter-cursor');
         typeWord();
     }
+    
     function observeElements(typeElems) {
         const options = {
             root: null,
@@ -441,9 +582,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach((entry, i) => {
                 if (entry.isIntersecting) {
-                    dynamicTypewriter(entry.target, 35, () => {
-
-                    });
+                    dynamicTypewriter(entry.target, 35, () => {});
                     observer.unobserve(entry.target);
                 }
             });
@@ -518,5 +657,4 @@ document.addEventListener("DOMContentLoaded", () =>{
         localStorage.setItem("week", 2);
         location.reload();
     });
-})
-
+})();
