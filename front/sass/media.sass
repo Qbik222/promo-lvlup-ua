@@ -214,6 +214,10 @@
     &__info
       margin-right: 30px
   .prize
+    &__btn
+      &-wrap
+        .prize__btn
+          max-width: 300px
     &__move
       &-right, &-left
         width: 38px
@@ -261,6 +265,10 @@
     &__list
       gap: 35px
       margin: 0 0 -60px 0
+  .prize
+    &__btn
+      &-wrap
+        flex-direction: column
 
 @media screen and (max-width: 600px)
   .title
@@ -811,6 +819,11 @@
         &-title
           font-size: 14px
           line-height: 20px
+    &__btn
+      &-wrap
+        .prize__btn
+          font-size: 18px
+          max-width: 280px
   .popups
     &._table
       .popups
