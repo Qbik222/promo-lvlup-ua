@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     })
 
 /// гліч слайдер
- function createSlider(slides, leftBtn, rightBtn, slidesIcons, current, path, img, week, coverflow, coverflowOffWidth, subtitles){
+ function createSlider(slides, leftBtn, rightBtn, slidesIcons, current, path, img, week, coverflow, coverflowOffWidth, subtitles, copySlides){
      let coverflowToggler = true
      if(window.innerWidth < coverflowOffWidth){
          coverflowToggler = false
@@ -115,10 +115,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 
          })
      }
-     function updateGlitchLayers(path, index) {
-         if(week === 2){
-             index += 6
-         }
+     function updateGlitchLayers(path, index, direction) {
          glitchLayers.forEach(layer => {
              layer.classList.forEach(className => {
                  if (className.startsWith("slide-info-glitch")) {
@@ -128,15 +125,47 @@ document.addEventListener("DOMContentLoaded", () =>{
                      layer.classList.remove(className);
                  }
              });
+
+             let questNumber = getSlideNum(slides[current]);
+
              if (layer.parentElement.parentElement.classList[0] !== "slide__info") {
-                 layer.classList.add(`quest${index}`);
-                 layer.style.background = path;
-             }
-             else {
+                 console.log(direction)
+                 if(copySlides){
+                     console.log(slides[current].previousElementSibling)
+                     if(slides[current].nextSibling !== null && slides[current].nextSibling.classList[1] !== slides[current].classList[1] && direction === "right"){
+                         layer.classList.add(`${slides[current].nextSibling.classList[1]}`);
+                     }
+                     else if(slides[current].previousElementSibling !== null && slides[current].previousElementSibling.classList[1] !== slides[current].classList[1] && direction === "left"){
+                         layer.classList.add(`${slides[current].previousElementSibling.classList[1]}`);
+                     }else if(slides[current].previousElementSibling === null && direction === "left"){
+                         layer.classList.add(`${slides[slides.length - 1].classList[1]}`);
+                     }
+                     else if(slides[current].nextSibling === null && direction === "right"){
+                         layer.classList.add(`${slides[1].classList[1]}`);
+                     }
+                     else{
+                         layer.classList.add(`${slides[current].classList[1]}`);
+                     }
+                 }else{
+                     layer.style.background = path;
+                 }
+
+
+             } else {
                  layer.classList.add("slide-info-glitch");
              }
          });
      }
+
+     function getSlideNum(slide) {
+         const questClass = [...slide.classList].find(className => className.startsWith("quest"));
+         if (questClass) {
+             return parseInt(questClass.replace("quest", ""));
+         }
+         return 1;
+     }
+
+
 
      function moveSlider(slides, direction) {
          if (direction === "left") {
@@ -158,6 +187,13 @@ document.addEventListener("DOMContentLoaded", () =>{
      function SlideIconsInit(icons, current) {
          icons.forEach((icon, iconIndex) => {
              icon.classList.toggle("_current", current === iconIndex);
+             if (current === iconIndex) {
+                 icon.scrollIntoView({
+                     behavior: 'smooth',
+                     block: 'center',
+                     inline: 'center'
+                 });
+             }
          });
      }
 
@@ -168,9 +204,9 @@ document.addEventListener("DOMContentLoaded", () =>{
          leftBtn.style.pointerEvents = "none";
          const nextSlideIndex = direction === "left" ? (current === 0 ? slides.length : current) : (current === slides.length - 1 ? 1 : current + 2);
          if(week === 2){
-             updateGlitchLayers(`url("${path}${nextSlideIndex + 6}/${img}") no-repeat 0 0/contain`, nextSlideIndex);
+             updateGlitchLayers(`url("${path}${nextSlideIndex + 6}/${img}") no-repeat 0 0/contain`, nextSlideIndex, direction);
          }else{
-             updateGlitchLayers(`url("${path}${nextSlideIndex}/${img}") no-repeat 0 0/contain`, nextSlideIndex);
+             updateGlitchLayers(`url("${path}${nextSlideIndex}/${img}") no-repeat 0 0/contain`, nextSlideIndex, direction);
          }
          setTimeout(() => {
              glitchLayers.forEach(layer => {
@@ -209,7 +245,7 @@ document.addEventListener("DOMContentLoaded", () =>{
              slides[current].classList.add("glitch");
              current = i;
              if(week === 2){
-                 updateGlitchLayers(`url("${path}${current + 7}/${img}") no-repeat 0 0/contain`, current + 1);
+                 updateGlitchLayers(`url("${path}${current + 7}/${img}") no-repeat 0 0/contain`, current + 1,);
              }
              else{
                  updateGlitchLayers(`url("${path}${current + 1}/${img}") no-repeat 0 0/contain`, current + 1);
@@ -297,8 +333,8 @@ document.addEventListener("DOMContentLoaded", () =>{
     }
     questsPath = checkMediaQueries(questsPath, "./img/quests/mob/slide")
 
-    createSlider(".slide", ".slide__move-left", ".slide__move-right", ".quests__icons-item", 1,questsPath, "pers.png", null, false, null, ".quests__subtitle")
-    createSlider(".prize__slide", ".prize__move-left", ".prize__move-right", ".prize__icons-item", 1,"./img/prize/slide", "prize.png", null, true , 1150)
+    createSlider(".slide", ".slide__move-left", ".slide__move-right", ".quests__icons-item", 1,questsPath, "pers.png", null, false, null, ".quests__subtitle", true)
+    createSlider(".prize__slide", ".prize__move-left", ".prize__move-right", ".prize__icons-item", 1,"./img/prize/slide", "prize.png", null, true , 1150, false)
     setPopups(".guide__info", ".guide__info-btn", ".guide__info-close")
     setPopups(".prize__slide-popup", ".prize__slide-info-btn", ".prize__slide-close")
     setPopups(".table__info-popup", ".table__info", ".table__info-close")
