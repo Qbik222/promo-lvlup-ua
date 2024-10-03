@@ -458,6 +458,13 @@ body.light
       display: flex
       height: 100px
       padding: 0 35px
+      scrollbar-width: auto
+      &::-webkit-scrollbar
+        background-color: $white
+        height: 2px
+      &::-webkit-scrollbar-thumb
+        background-color: $magenta
+        height: 2px
     &-item
       width: 51px
       height: 50px
@@ -805,7 +812,7 @@ body.light
         .slide__info
           margin-left: -390px
         .slide__title
-          margin-bottom: -6px
+          margin-bottom: -3px
       &.quest6
         &::before
           background: url("https://fav-prom.com/html/level-up-game-ua/img/quests/slide6/slide-bg.png") no-repeat 0 0/cover
@@ -1006,7 +1013,7 @@ body.light
           display: flex
           align-items: flex-end
           justify-content: space-between
-          padding: 0 30px 19px 35px
+          padding: 0 30px 13px 35px
           position: relative
           @media screen and (max-width: 600px)
             background: url("https://fav-prom.com/html/level-up-game-ua/img/quests/quest-top-bg-mob.png") no-repeat 0 0/cover
@@ -1023,6 +1030,7 @@ body.light
           align-items: center
           justify-content: center
           gap: 2px
+          margin-bottom: 10px
           @media screen and (max-width: 600px)
               background: url("https://fav-prom.com/html/level-up-game-ua/img/quests/quest-prize-bg-mob.png") no-repeat 0 0/cover
           &-title
@@ -1088,6 +1096,7 @@ body.light
           height: 170px
           overflow-y: auto
           margin: 20px 40px 0 45px
+          scrollbar-width: auto
           &::-webkit-scrollbar-thumb
             background: $magenta
             width: 4px
@@ -1259,8 +1268,8 @@ body.light
             font-family: inherit
             font-size: inherit
         &-decor
-          font-size: 27px
-          line-height: 23px
+          font-size: 25px
+          line-height: 22px
           font-family: $font-handjet-med
           letter-spacing: 0.05em
           position: relative
@@ -1683,7 +1692,7 @@ body.light
     max-width: 516px
     position: absolute
     right: -160px
-    top: 150px
+    top: 190px
 .prize
   display: flex
   flex-direction: column
@@ -2014,6 +2023,7 @@ body.light
     background: url("https://fav-prom.com/html/level-up-game-ua/img/drop-txt-bg.png") no-repeat 0 0/cover
     background-size: 100% 100%
     color: $white
+    scrollbar-width: auto
     &::-webkit-scrollbar
       background-color: $white
       width: 3px

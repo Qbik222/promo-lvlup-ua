@@ -150,12 +150,16 @@
       max-width: 550px
     &__pers
       right: 0
-    &__wrap, &__list, &__btn, &__bottom
+    &__wrap, &__list, &__bottom
       margin-right: auto
       margin-left: 100px
     &__bottom
       font-size: 14px
       line-height: 14px
+    &__btn
+      &-wrap
+        max-width: 510px
+        margin: 0 auto 0 100px
   .prize
     &__title
       font-size: 46px
@@ -209,10 +213,8 @@
       min-width: 400px
       max-width: 400px
       right: -80px
-    &__wrap, &__list, &__btn, &__bottom
+    &__wrap, &__list, &__btn-wrap, &__bottom
       margin-left: 50px
-    &__info
-      margin-right: 30px
   .prize
     &__btn
       &-wrap
@@ -428,7 +430,7 @@
             max-height: 250px
             min-height: 250px
             align-items: flex-start
-            padding: 35px 30px 0 35px
+            padding: 35px 30px 0 25px
           &-prize
             margin-top: -15px
             min-width: 127px
@@ -780,7 +782,7 @@
       &-img
         min-width: 295px
 
-@media screen and (max-width: 335px)
+@media screen and (max-width: 340px)
   .btn
     font-size: 18px
     padding: 30px 11px 24px 15px
