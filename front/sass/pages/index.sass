@@ -299,6 +299,7 @@ body.light
     max-width: 1100px
     width: 100%
     position: relative
+    z-index: 2
     &-item
       position: relative
       width: 217px
@@ -1135,6 +1136,9 @@ body.light
           letter-spacing: 1px
           padding: 30px 24px 30px 23px
           margin: 15px auto 0 40px
+          width: 100%
+          max-width: 258px
+          text-align: center
           &::before
             content: ""
             display: block
@@ -1754,6 +1758,9 @@ body.light
     background: transparent
     opacity: 0
     padding: 15px
+    &.slide1
+      .prize__slide-info
+        margin-top: -65px
     &-img
       position: relative
     .glitch__layers
@@ -1963,25 +1970,22 @@ body.light
       flex-wrap: wrap
       margin-top: 45px
       .prize__btn
-        padding: 25px 10px 18px 10px
+        padding: 25px 10px 25px 10px
+        height: 75px
         max-width: 350px
         display: flex
         align-items: center
         margin-top: 0
-        &:nth-child(1)
-          padding: 25px 10px 25px 10px
-          &::before
-            left: 48%
-        &:nth-child(2)
-          padding: 25px 65px 25px 65px
-          &::before
-            left: 49%
-            top: 50%
-            width: 60%
+        font-size: 15px
+        line-height: 15px
+        width: 260px
+        justify-content: center
+        //padding: 25px 65px 25px 65px
         &::before
-          white-space: normal
-          width: 100%
-          top: 52%
+            left: 49%
+            top: 49%
+            white-space: normal
+            width: 100%
 .drop
   max-width: 1240px
   width: 100%
@@ -2097,7 +2101,7 @@ body.light
     width: 54px
     height: 58px
     position: absolute
-    top: 30px
+    top: 70px
     right: 30px
     background: url("https://fav-prom.com/html/level-up-game-ua/img/buttons/btn-close.png") no-repeat 0 0/contain
     transition: background .7s ease-in-out
@@ -2128,7 +2132,7 @@ body.light
           background: $blue url("https://fav-prom.com/html/level-up-game-ua/img/table/popup-table-bg.png") no-repeat 0 0/cover
           background-size: 100% 100%
           padding: 15px
-          max-height: 475px
+          max-height: 465px
           overflow-y: auto
           overflow-x: hidden
         &-scroll-wrap
@@ -2158,6 +2162,11 @@ body.light
         &-title
           font-size: 36px
           line-height: 56px
+          text-align: center
+          &:before
+            white-space: normal
+            text-align: center
+
         &-text
           padding: 20px
           color: $white

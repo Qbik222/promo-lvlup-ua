@@ -22,6 +22,16 @@
       &-title
         width: 430px
         height: 73px
+  .guide
+    &__list
+      &-item
+        &:nth-child(3)
+          .guide__info
+            left: 75%
+        &:nth-child(6)
+          .guide__info
+            left: 25%
+
   .prize
     &__slider
       transform: scale(.85)
@@ -129,6 +139,12 @@
         justify-content: flex-start
         &-num
           font-size: 46px
+        &:nth-child(3)
+          .guide__info
+            left: 50%
+        &:nth-child(6)
+          .guide__info
+            left: 50%
     &__decor
       &-top
         top: auto
@@ -139,7 +155,7 @@
       &-bottom
         bottom: auto
         top: 0
-        transform: translate(60%, -130%)
+        transform: translate(60%, -40%)
         opacity: .4
         max-width: 60px
   .table
@@ -225,10 +241,18 @@
         width: 38px
         height: 84px
 
+@media screen and (max-width: 860px) and (max-height: 650px) and (min-width: 600px)
+  .popups
+    &__table, &__done
+      transform: scale(.7)
+
 @media screen and (max-width: 755px)
   .table
     &__pers
       right: -110px
+
+
+
 
 @media screen and (max-width: 720px)
   .info
@@ -271,6 +295,10 @@
     &__btn
       &-wrap
         flex-direction: column
+  .table
+    &__btn
+      &-wrap
+        max-width: 450px
 
 @media screen and (max-width: 600px)
   .title
@@ -314,7 +342,7 @@
     &__left, &__right
       max-width: 100%
       width: 100%
-      margin: 0
+      margin: 20px 0 0 0
     &__right
       padding: 0
       &-title
@@ -329,9 +357,9 @@
       gap: 10px
       z-index: 3
       transform: scale(1)
-      &-item
-        &:nth-child(5)
-          margin-bottom: 25px
+      //&-item
+      //  &:nth-child(5)
+      //    margin-bottom: 25px
     &__decor
       &-top
         transform: translate(15%, 100%)
@@ -824,7 +852,7 @@
     &__btn
       &-wrap
         .prize__btn
-          font-size: 18px
+          //font-size: 18px
           max-width: 280px
   .popups
     &._table
@@ -858,6 +886,8 @@
           &-text
             font-size: 20px
             min-width: 330px
+    &__table, &__done
+      transform: scale(.55)
 
 @media screen and (max-width: 680px) and (max-height: 400px) and (orientation: landscape)
   .promo
@@ -917,11 +947,11 @@
     &._table
       .popups
         &__table
-          transform: scale(.7)
+          transform: scale(.5)
 
 @media screen and (max-height: 350px)
   .popups
     &._table
       .popups
         &__table
-          transform: scale(.6)
+          transform: scale(.45)
