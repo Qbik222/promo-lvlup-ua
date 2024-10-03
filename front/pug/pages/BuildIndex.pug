@@ -1,9 +1,3 @@
-button.week1 week1
-button.week2 week2
-button.done-popup done
-button.dark-btn dark
-button.en-lng en
-
 .fav-page#lvlUp
     .promo._container
         .promo__wrap
@@ -15,9 +9,9 @@ button.en-lng en
                         .glitch__layer
                         .glitch__layer
             .promo__text
-                a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").promo__text-btn.unauth-msg.btn Авторизуйся
-                .promo__text-btn.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="взяти участь") Взяти участь
-                .promo__text-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").promo__text-btn.unauth-msg.btn Авторизуйся
+                .promo__text-btn.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                a(href="/sports/sport/soccer/" role="button" data-translate="playBtn" data-decor="playBtn").promo__text-btn.btn.took-part.hide Грати
                 .promo__text-info.subtitle(data-translate="promoTextInfo") Cерія з 4 турнірів
         .promo__bottom(data-translate="promoPrizeBottom") *Під призовим фондом в 10 000 000 UAH мається на увазі отримання призу у вигляді електронних грошових замінників в Акції «Прокачай гру». Деталі на сайті www.favbet.ua. Період дії акції з 01.10.2024 по 15.10.2024 року.
     .info._container
@@ -26,21 +20,21 @@ button.en-lng en
                 source(srcset="https://fav-prom.com/html/level-up-game-ua/img/info/info-pers-mob.png" media="(max-width: 1050px)")
                 img(src="https://fav-prom.com/html/level-up-game-ua/img/info/info-pers.png" alt="favbet")
         .info__right
-            .info__right-title.title(data-translate="infoTitle", data-decor="Бери участь") Бери участь
+            .info__right-title.title(data-translate="infoTitle", data-decor="infoTitle") Бери участь
                 .glitch__layers
-                    .glitch__layer(data-decor="Бери участь")
-                    .glitch__layer(data-decor="Бери участь")
-                    .glitch__layer(data-decor="Бери участь")
+                    .glitch__layer(data-decor="infoTitle")
+                    .glitch__layer(data-decor="infoTitle")
+                    .glitch__layer(data-decor="infoTitle")
             .info__text(data-translate="infoText")
             .info__progress
                 span.info__progress-text 60%
                 span.info__progress-bar
     .guide
-        .guide__title.title(data-translate="guideTitle", data-decor="як взяти участь ?") як взяти участь ?
+        .guide__title.title(data-translate="guideTitle", data-decor="guideTitle") як взяти участь ?
             .glitch__layers
-                .glitch__layer(data-decor="як взяти участь ?")
-                .glitch__layer(data-decor="як взяти участь ?")
-                .glitch__layer(data-decor="як взяти участь ?")
+                .glitch__layer(data-decor="guideTitle")
+                .glitch__layer(data-decor="guideTitle")
+                .glitch__layer(data-decor="guideTitle")
 
         ul.guide__list
             .guide__decor-top.glitch
@@ -104,15 +98,16 @@ button.en-lng en
                         .guide__info-text Коли Сем у грі, то можеш бути певен, що отримаєш
                         .guide__info-text Коли Сем у грі, то можеш бути певен, що отримаєш
                 .guide__info-btn
-        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").guide__btn.unauth-msg.btn Авторизуйся
-        .guide__btn.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="взяти участь") взяти участь
-        .guide__btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").guide__btn.unauth-msg.btn Авторизуйся
+        .guide__btn.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") взяти участь
+        a(href="/sports/sport/soccer/" role="button" data-translate="playBtn" data-decor="playBtn").guide__btn.btn.took-part.hide Грати
+
     .quests
-        .quests__title.title(data-translate="questsTitle" data-decor="прокачай квести") прокачай квести
+        .quests__title.title(data-translate="questsTitle" data-decor="questsTitle") прокачай квести
             .glitch__layers
-                .glitch__layer(data-decor="прокачай квести")
-                .glitch__layer(data-decor="прокачай квести")
-                .glitch__layer(data-decor="прокачай квести")
+                .glitch__layer(data-decor="questsTitle")
+                .glitch__layer(data-decor="questsTitle")
+                .glitch__layer(data-decor="questsTitle")
         .quests__subtitle(data-translate="questsSubtitle1").subtitle.quest1 Роби ставки на всі баскетбольні події в рамках Євроліги
         .quests__subtitle(data-translate="questsSubtitle1").subtitle.quest1 Роби ставки на всі баскетбольні події в рамках Євроліги
         .quests__subtitle(data-translate="questsSubtitle2").subtitle.quest2 Грай у “Краш квест” та отримуй гарантовані призи за виконання
@@ -172,7 +167,7 @@ button.en-lng en
                 .slide__move-left
                 .slide__move-right
             .slide__container
-                .slide.quest1._undone
+                .slide.quest1._undone(data-quest="11")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -187,7 +182,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName1-1") КВЕСТ#1 <br> ЄВРОДАНК
                                 span.slide__title-date(data-translate="questDate1-1") Дата: 03.10 - 04.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize") приз
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize") приз
                                 p.slide__info-prize-subtitle(data-translate="sbr") Страховка <br> ставки до
                                 p.slide__info-prize-title(data-decor="150") 150
                                 p.slide__info-prize-subtitle(data-translate="uah") UAH
@@ -204,31 +199,32 @@ button.en-lng en
                                 робити ставки від 50₴ на баскетбольні події виключно в рамках “Євроліги” та досягти загальної суми
                                 ставок — 150₴. Враховуються виключно розраховані ординари з коефіцієнтом від 1.5.
                                 Приз за виконання квесту — Страховка Ставки до 150₴
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/sports/top/euroleague/" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 150 ставок]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo1-1" data-decor="ти виконав квест #1").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo1-1" data-decor="doneInfo1-1").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest1
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest1(data-quest="12")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -243,7 +239,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName1-2") КВЕСТ#1 <br> ЄВРОДАНК
                                 span.slide__title-date(data-translate="questDate1-2") Дата: 03.10 - 04.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize") приз
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize") приз
                                 p.slide__info-prize-subtitle(data-translate="sbr") Страховка <br> ставки до
                                 p.slide__info-prize-title(data-decor="150") 150
                                 p.slide__info-prize-subtitle(data-translate="uah") UAH
@@ -260,31 +256,32 @@ button.en-lng en
                                 робити ставки від 50₴ на баскетбольні події виключно в рамках “Євроліги” та досягти загальної суми
                                 ставок — 150₴. Враховуються виключно розраховані ординари з коефіцієнтом від 1.5.
                                 Приз за виконання квесту — Страховка Ставки до 150₴
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/sports/top/euroleague/" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 150 ставок]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo1-2" data-decor="ти виконав квест #1").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo1-2" data-decor="doneInfo1-2").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest2._lock
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest2._lock(data-quest="21")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -299,7 +296,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName2-1") КВЕСТ#2 <br> КРАШ КВЕСТ
                                 span.slide__title-date(data-translate="questDate2-1") Дата: 05.10 - 06.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-title(data-decor="30") 30
                                 p.slide__info-prize-subtitle(data-translate="fs") FS
                         .slide__info-mob
@@ -315,31 +312,32 @@ button.en-lng en
                                 “FAVX” від провайдера JetX. Для проходження квесту потрібно набрати 150 балів за механікою —
                                 множник виграшної ставки. Враховуються лише ставки з множником від х1.5
                                 Приз за виконання квесту — 50 FS
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/casino/show-game/spribe-infin/aviator-game/?playMode=real" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 150 балів]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo2-1" data-decor="ти виконав квест #2").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo2-1" data-decor="doneInfo2-1").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate2") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate2") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest2._lock
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest2._lock(data-quest="22")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -354,7 +352,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName2-2") КВЕСТ#2 <br> КРАШ КВЕСТ
                                 span.slide__title-date(data-translate="questDate2-2") Дата: 05.10 - 06.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-title(data-decor="50") 50
                                 p.slide__info-prize-subtitle(data-translate="fs") FS
                         .slide__info-mob
@@ -370,31 +368,32 @@ button.en-lng en
                                 “FAVX” від провайдера JetX. Для проходження квесту потрібно набрати 150 балів за механікою —
                                 множник виграшної ставки. Враховуються лише ставки з множником від х1.5
                                 Приз за виконання квесту — 50 FS
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/casino/show-game/jetx/jetx/?playMode=real" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 150 балів]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo2-2" data-decor="ти виконав квест #2").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo2-2" data-decor="doneInfo2-2").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate2") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate2") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest3._lock
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest3._lock(data-quest="31")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -409,7 +408,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName3-1") квест#3 <br> спорт арена
                                 span.slide__title-date(data-translate="questDate3-1") Дата: 07.10 - 08.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-subtitle(data-translate="sbr") Страховка <br> ставки до
                                 p.slide__info-prize-title(data-decor="200") 200
                                 p.slide__info-prize-subtitle(data-translate="uah") UAH
@@ -426,31 +425,32 @@ button.en-lng en
                                 від 50₴ на всі події розділу КІБЕРСПОРТ та досягти загальної суми ставок — 200₴.
                                  Враховуються виключно розраховані ординари з коефіцієнтом від 1.5.
                                 Приз за виконання квесту — Страховка Ставки до 200₴
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/e-sports/all/" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 200 ставок]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo3-1" data-decor="ти виконав квест #3").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo3-1" data-decor="doneInfo3-1").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate3") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate3") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest3._lock
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest3._lock(data-quest="32")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -465,7 +465,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName3-2") квест#3 <br> спорт арена
                                 span.slide__title-date(data-translate="questDate3-2") Дата: 07.10 - 08.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-subtitle(data-translate="sbr") Страховка <br> ставки до
                                 p.slide__info-prize-title(data-decor="200") 200
                                 p.slide__info-prize-subtitle(data-translate="uah") UAH
@@ -482,31 +482,32 @@ button.en-lng en
                                 від 50₴ на всі події розділу КІБЕРСПОРТ та досягти загальної суми ставок — 200₴.
                                  Враховуються виключно розраховані ординари з коефіцієнтом від 1.5.
                                 Приз за виконання квесту — Страховка Ставки до 200₴
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/e-sports/all/" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 200 ставок]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo3-2" data-decor="ти виконав квест #3").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo3-2" data-decor="doneInfo3-2").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate3") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate3") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest4._lock
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest4._lock(data-quest="41")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -521,7 +522,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName4-1") квест#4 <br> спін пригоди
                                 span.slide__title-date(data-translate="questDate4-1") Дата: 09.10 - 10.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-title(data-decor="40") 40
                                 p.slide__info-prize-subtitle(data-translate="fs") fs
                         .slide__info-mob
@@ -537,31 +538,32 @@ button.en-lng en
                                 “Gonzo's Quest Megaways” від провайдера Red Tiger. Для проходження квесту потрібно набрати 200 балів
                                 за оборот ставок, де за кожні поставлені 10₴ = 1 бал.
                                 Приз за виконання квесту — 50 FS
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/casino/show-game/yggdrasil/valley-of-the-gods/?playMode=real" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 200 балів]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo4-1" data-decor="ти виконав квест #1").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo4-1" data-decor="doneInfo4-1").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate4") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate4") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest4._lock
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest4._lock(data-quest="42")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -576,7 +578,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName4-2") квест#4 <br> спін пригоди
                                 span.slide__title-date(data-translate="questDate4-2") Дата: 09.10 - 10.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-title(data-decor="50") 50
                                 p.slide__info-prize-subtitle(data-translate="fs") fs
                         .slide__info-mob
@@ -592,31 +594,32 @@ button.en-lng en
                                 “Gonzo's Quest Megaways” від провайдера Red Tiger. Для проходження квесту потрібно набрати 200 балів
                                 за оборот ставок, де за кожні поставлені 10₴ = 1 бал.
                                 Приз за виконання квесту — 50 FS
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/casino/show-game/red-tiger/gonzos-quest-megaways/?playMode=real" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 200 балів]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo4-2" data-decor="ти виконав квест #1").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo4-2" data-decor="doneInfo4-2").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate4") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate4") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest5._lock
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest5._lock(data-quest="51")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -631,7 +634,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName5-1") квест#5 <br> льодовиковий <br> період
                                 span.slide__title-date(data-translate="questDate5-1") Дата: 11.10 - 12.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-subtitle(data-translate="sbr") Страховка <br> ставки до
                                 p.slide__info-prize-title(data-decor="250") 250
                                 p.slide__info-prize-subtitle(data-translate="uah") UAH
@@ -648,31 +651,32 @@ button.en-lng en
                                 ставки від 50₴ на події виключно в рамках турніру “НХЛ” та досягти загальної суми ставок — 250₴.
                                 Враховуються виключно розраховані ординари з коефіцієнтом від 1.5.
                                 Приз за виконання квесту — Страховка Ставки до 250₴
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/sports/top/nhl/" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 250 ставок]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo5-1" data-decor="ти виконав квест #1").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo5-1" data-decor="doneInfo5-1").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate5") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate5") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                         .slide__undone
                             .slide__undone-title(data-translate="undoneTitle") не виконав
                             .slide__undone-wrap
                                 .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                                a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest5._lock
+                                .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest5._lock(data-quest="52")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -687,7 +691,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName5-2") квест#5 <br> льодовиковий <br> період
                                 span.slide__title-date(data-translate="questDate5-2") Дата: 11.10 - 12.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-subtitle(data-translate="sbr") Страховка <br> ставки до
                                 p.slide__info-prize-title(data-decor="250") 250
                                 p.slide__info-prize-subtitle(data-translate="uah") UAH
@@ -704,31 +708,32 @@ button.en-lng en
                                 ставки від 50₴ на події виключно в рамках турніру “НХЛ” та досягти загальної суми ставок — 250₴.
                                 Враховуються виключно розраховані ординари з коефіцієнтом від 1.5.
                                 Приз за виконання квесту — Страховка Ставки до 250₴
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/sports/top/nhl/" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 250 ставок]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo5-2" data-decor="ти виконав квест #1").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo5-2" data-decor="doneInfo5-2").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate5") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate5") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest6._lock
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest6._lock(data-quest="61")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -743,7 +748,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName6-1") квест#6 <br> шалені оберти
                                 span.slide__title-date(data-translate="questDate6-1") Дата: 13.10 - 14.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-title(data-decor="40") 40
                                 p.slide__info-prize-subtitle(data-translate="fs") fs
                         .slide__info-mob
@@ -759,31 +764,32 @@ button.en-lng en
                                 у грі “Coin Strike: Hold and Win” від провайдера Playson Для проходження квесту потрібно набрати
                                 400 балів, де кожна ставка незалежно від виграшу або програшу = 1 бал.
                                 Приз за виконання квесту —60 FS
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/casino/show-game/spinomenal/book-of-favbet/?playMode=real" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 400 обертів]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo6-1" data-decor="ти виконав квест #1").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo6-1" data-decor="doneInfo6-1").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate6") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate6") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest6._lock
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest6._lock(data-quest="62")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -798,7 +804,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName6-2") квест#6 <br> шалені оберти
                                 span.slide__title-date(data-translate="questDate6-2") Дата: 13.10 - 14.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-title(data-decor="60") 60
                                 p.slide__info-prize-subtitle(data-translate="fs") fs
                         .slide__info-mob
@@ -814,31 +820,32 @@ button.en-lng en
                                 у грі “Coin Strike: Hold and Win” від провайдера Playson Для проходження квесту потрібно набрати
                                 400 балів, де кожна ставка незалежно від виграшу або програшу = 1 бал.
                                 Приз за виконання квесту —60 FS
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/casino/show-game/playson/coin-strike-hold-and-win/?playMode=real" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 400 обертів]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo6-2" data-decor="ти виконав квест #1").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo6-2" data-decor="doneInfo6-2").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate6") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate6") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest7._lock
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest7._lock(data-quest="71")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -853,7 +860,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName7-1") квест#7 <br> квест розваг
                                 span.slide__title-date(data-translate="questDate7-1") Дата: 22.10 - 23.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-title(data-decor="60") 60
                                 p.slide__info-prize-subtitle(data-translate="fs") fs
                         .slide__info-mob
@@ -869,31 +876,32 @@ button.en-lng en
                                 у грі “Supreme Hot” від провайдера Amusnet. Для проходження квесту потрібно набрати 250 балів за оборот
                                 ставок, де за кожні поставлені 10₴ = 1 бал.
                                 Приз за виконання квесту — 70 FS
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/casino/show-game/hacksaw/donny-dough/?playMode=real" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 250 балів]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo7-1" data-decor="ти виконав квест #1").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo7-1" data-decor="doneInfo7-1").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate7") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate7") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest7._lock
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest7._lock(data-quest="72")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -908,7 +916,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName7-2") квест#7 <br> квест розваг
                                 span.slide__title-date(data-translate="questDate7-2") Дата: 22.10 - 23.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-title(data-decor="70") 70
                                 p.slide__info-prize-subtitle(data-translate="fs") fs
                         .slide__info-mob
@@ -924,31 +932,32 @@ button.en-lng en
                                 у грі “Supreme Hot” від провайдера Amusnet. Для проходження квесту потрібно набрати 250 балів за оборот
                                 ставок, де за кожні поставлені 10₴ = 1 бал.
                                 Приз за виконання квесту — 70 FS
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/casino/show-game/amusnet-interactive/supreme-hot/?playMode=real" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 250 балів]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo7-2" data-decor="ти виконав квест #1").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo7-2" data-decor="doneInfo7-2").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate7") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate7") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest8._lock
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest8._lock(data-quest="81")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -963,7 +972,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName8-1") квест#8 <br> баскет батл
                                 span.slide__title-date(data-translate="questDate8-1") Дата: 24.10 - 25.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-subtitle(data-translate="sbr") Страховка <br> ставки до
                                 p.slide__info-prize-title(data-decor="300") 300
                                 p.slide__info-prize-subtitle(data-translate="uah") UAH
@@ -980,31 +989,32 @@ button.en-lng en
                                 року робити ставки від 50₴ на події виключно в рамках турніру “НБА” та досягти загальної суми ставок — 300₴.
                                 Враховуються виключно розраховані ординари з коефіцієнтом від 1.5.
                                 Приз за виконання квесту — Страховка Ставки до 300₴
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/sports/sport/basketball/" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 300 ставок]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo8-1" data-decor="ти виконав квест #1").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo8-1" data-decor="doneInfo8-1").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate8") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate8") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest8._lock
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest8._lock(data-quest="82")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -1019,7 +1029,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName8-2") квест#8 <br> баскет батл
                                 span.slide__title-date(data-translate="questDate8-2") Дата: 24.10 - 25.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-subtitle(data-translate="sbr") Страховка <br> ставки до
                                 p.slide__info-prize-title(data-decor="300") 300
                                 p.slide__info-prize-subtitle(data-translate="uah") UAH
@@ -1036,31 +1046,32 @@ button.en-lng en
                                 року робити ставки від 50₴ на події виключно в рамках турніру “НБА” та досягти загальної суми ставок — 300₴.
                                 Враховуються виключно розраховані ординари з коефіцієнтом від 1.5.
                                 Приз за виконання квесту — Страховка Ставки до 300₴
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/sports/sport/basketball/" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 300 ставок]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo8-2" data-decor="ти виконав квест #1").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo8-2" data-decor="doneInfo8-2").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate8") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate8") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest9._lock
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest9._lock(data-quest="91")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -1075,7 +1086,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName9-1") квест#9 <br> гра в бонуси
                                 span.slide__title-date(data-translate="questDate9-1") Дата: 22.10 - 23.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-title(data-decor="40") 40
                                 p.slide__info-prize-subtitle(data-translate="fs") fs
                         .slide__info-mob
@@ -1099,31 +1110,32 @@ button.en-lng en
                                  року робити ставки від 5₴ у грі “Piggy Power: Hit the Bonus” від провайдера Playson.
                                  Для проходження квесту потрібно зіграти 10 бонусних ігор. *Купівля бонусу не враховується в прогрес бар.
                                 Приз за виконання квесту — 70 FS
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/casino/show-game/playson/clover-charm-hit-the-bonus/?playMode=real" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 10 ігор]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo9-1" data-decor="ти виконав квест #1").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo9-1" data-decor="doneInfo9-1").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate9") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate9") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest9._lock
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest9._lock(data-quest="92")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -1138,7 +1150,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName9-2") квест#9 <br> гра в бонуси
                                 span.slide__title-date(data-translate="questDate9-2") Дата: 22.10 - 23.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-title(data-decor="50") 50
                                 p.slide__info-prize-subtitle(data-translate="fs") fs
                         .slide__info-mob
@@ -1162,31 +1174,32 @@ button.en-lng en
                                  року робити ставки від 5₴ у грі “Piggy Power: Hit the Bonus” від провайдера Playson.
                                  Для проходження квесту потрібно зіграти 10 бонусних ігор. *Купівля бонусу не враховується в прогрес бар.
                                 Приз за виконання квесту — 70 FS
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/casino/show-game/3-oaks/lamp-of-wonder/?playMode=real" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 10 ігор]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo9-2" data-decor="ти виконав квест #1").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo9-2" data-decor="doneInfo9-2").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate9") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate9") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest9._lock
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest9._lock(data-quest="93")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -1201,7 +1214,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName9-3") квест#9 <br> гра в бонуси
                                 span.slide__title-date(data-translate="questDate9-3") Дата: 22.10 - 23.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-title(data-decor="60") 60
                                 p.slide__info-prize-subtitle(data-translate="fs") fs
                         .slide__info-mob
@@ -1225,31 +1238,32 @@ button.en-lng en
                                  року робити ставки від 5₴ у грі “Piggy Power: Hit the Bonus” від провайдера Playson.
                                  Для проходження квесту потрібно зіграти 10 бонусних ігор. *Купівля бонусу не враховується в прогрес бар.
                                 Приз за виконання квесту — 70 FS
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/casino/show-game/3-oaks/coin-volcano/?playMode=real" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 10 ігор]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo9-3" data-decor="ти виконав квест #1").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo9-3" data-decor="doneInfo9-3").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate9") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate9") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest9._lock
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest9._lock(data-quest="94")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -1264,7 +1278,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName9-4") квест#9 <br> гра в бонуси
                                 span.slide__title-date(data-translate="questDate9-4") Дата: 22.10 - 23.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-title(data-decor="70") 70
                                 p.slide__info-prize-subtitle(data-translate="fs") fs
                         .slide__info-mob
@@ -1288,31 +1302,32 @@ button.en-lng en
                                  року робити ставки від 5₴ у грі “Piggy Power: Hit the Bonus” від провайдера Playson.
                                  Для проходження квесту потрібно зіграти 10 бонусних ігор. *Купівля бонусу не враховується в прогрес бар.
                                 Приз за виконання квесту — 70 FS
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/casino/show-game/playson/piggy-power-hit-the-bonus/?playMode=real" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 10 ігор]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo9-4" data-decor="ти виконав квест #1").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo9-4" data-decor="doneInfo9-4").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate9") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate9") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest10._lock
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest10._lock(data-quest="101")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -1327,7 +1342,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName10-1") квест#10 <br> сильний <br> кидок
                                 span.slide__title-date(data-translate="questDate10-1") Дата: 30.10 - 31.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-subtitle(data-translate="sbr") Страховка <br> ставки до
                                 p.slide__info-prize-title(data-decor="350") 350
                                 p.slide__info-prize-subtitle(data-translate="uah") UAH
@@ -1344,31 +1359,32 @@ button.en-lng en
                                 від 50₴ на гандбол виключно в рамках “Ліги Чемпіонів” та досягти загальної суми ставок — 350₴.
                                 Враховуються виключно розраховані ординари з коефіцієнтом від 1.5.
                                 Приз за виконання квесту — Страховка Ставки до 350₴
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/sports/tournament/handball/17516/" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 350 ставок]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo10-1" data-decor="ти виконав квест #1").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo10-1" data-decor="doneInfo10-1").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate10") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate10") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest10._lock
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest10._lock(data-quest="102")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -1383,7 +1399,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName10-2") квест#10 <br> сильний <br> кидок
                                 span.slide__title-date(data-translate="questDate10-2") Дата: 30.10 - 31.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-subtitle(data-translate="sbr") Страховка <br> ставки до
                                 p.slide__info-prize-title(data-decor="350") 350
                                 p.slide__info-prize-subtitle(data-translate="uah") UAH
@@ -1400,31 +1416,32 @@ button.en-lng en
                                 від 50₴ на гандбол виключно в рамках “Ліги Чемпіонів” та досягти загальної суми ставок — 350₴.
                                 Враховуються виключно розраховані ординари з коефіцієнтом від 1.5.
                                 Приз за виконання квесту — Страховка Ставки до 350₴
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/sports/tournament/handball/17516/" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 350 ставок]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo10-2" data-decor="ти виконав квест #1").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo10-2" data-decor="doneInfo10-2").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate10") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate10") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest11._lock
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest11._lock(data-quest="111")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -1439,7 +1456,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName11-1") квест#11 <br> кібер батл
                                 span.slide__title-date(data-translate="questDate11-1") Дата: 01.11 - 02.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-subtitle(data-translate="sbr") Страховка <br> ставки до
                                 p.slide__info-prize-title(data-decor="400") 400
                                 p.slide__info-prize-subtitle(data-translate="uah") UAH
@@ -1455,31 +1472,32 @@ button.en-lng en
                                 02.11 - Для виконання квесту необхідно з 00:00 по 23:30 02.11.2024 року робити ставки від 50₴ на всі події розділу КІБЕРСПОРТ
                                 та досягти загальної суми ставок — 400₴. Враховуються виключно розраховані ординари з коефіцієнтом від 1.5.
                                 Приз за виконання квесту — Страховка Ставки до 400₴
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/e-sports/all/" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 400 ставок]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo11-1" data-decor="ти виконав квест #1").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo11-1" data-decor="doneInfo11-1").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate11") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate11") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest11._lock
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest11._lock(data-quest="112")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -1494,7 +1512,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName11-2") квест#11 <br> кібер батл
                                 span.slide__title-date(data-translate="questDate11-2") Дата: 01.11 - 02.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-subtitle(data-translate="sbr") Страховка <br> ставки до
                                 p.slide__info-prize-title(data-decor="400") 400
                                 p.slide__info-prize-subtitle(data-translate="uah") UAH
@@ -1510,31 +1528,32 @@ button.en-lng en
                                 02.11 - Для виконання квесту необхідно з 00:00 по 23:30 02.11.2024 року робити ставки від 50₴ на всі події розділу КІБЕРСПОРТ
                                 та досягти загальної суми ставок — 400₴. Враховуються виключно розраховані ординари з коефіцієнтом від 1.5.
                                 Приз за виконання квесту — Страховка Ставки до 400₴
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/e-sports/all/" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 400 ставок]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo11-2" data-decor="ти виконав квест #1").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo11-2" data-decor="doneInfo11-2").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate11") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate11") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest12._lock
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest12._lock(data-quest="121")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -1549,7 +1568,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName12-1") квест#12 <br> live фінал
                                 span.slide__title-date(data-translate="questDate12-1") Дата: 01.10 - 02.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-title(data-decor="60") 60
                                 p.slide__info-prize-subtitle(data-translate="uah") UAH
                         .slide__info-mob
@@ -1566,31 +1585,32 @@ button.en-lng en
                                 Для проходження квесту потрібно набрати 100 балів за механікою — множник виграшної ставки.
                                 Враховуються лише ставки з множником від х1.5
                                 Приз за виконання квесту — 100 FS
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/live-casino/show-game/spinner/favbet-roulette/?playMode=real" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 100 балів]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo12-1" data-decor="ти виконав квест #1").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo12-1" data-decor="doneInfo12-1").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate12") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate12") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
-                .slide.quest12._lock
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                .slide.quest12._lock(data-quest="122")
                     .glitch__layers
                         .glitch__layer
                         .glitch__layer
@@ -1605,7 +1625,7 @@ button.en-lng en
                                 span.slide__title-decor(data-translate="questName12-2") квест#12 <br> live фінал
                                 span.slide__title-date(data-translate="questDate12-2") Дата: 01.10 - 02.10
                             .slide__info-prize
-                                p.slide__info-prize-title(data-decor="приз" data-translate="prize")
+                                p.slide__info-prize-title(data-decor="prize" data-translate="prize")
                                 p.slide__info-prize-title(data-decor="100") 100
                                 p.slide__info-prize-subtitle(data-translate="uah") UAH
                         .slide__info-mob
@@ -1622,36 +1642,37 @@ button.en-lng en
                                 Для проходження квесту потрібно набрати 100 балів за механікою — множник виграшної ставки.
                                 Враховуються лише ставки з множником від х1.5
                                 Приз за виконання квесту — 100 FS
-                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="Авторизуйся").slide__info-btn.unauth-msg.btn Авторизуйся
-                        .slide__info-btn.btn.btnQuest.hide(role="button" data-translate="questBtn" data-decor="Пройти квест") Пройти квест
-                        .slide__info-btn.btn.btn-join.hide(role="button" data-translate="playBtn" data-decor="Грати") Грати
+                        a(href="/login/" role="button" data-translate="loginBtn" data-decor="loginBtn").slide__info-btn.unauth-msg.btn Авторизуйся
+                        .slide__info-bt.btn.btn-join.hide(role="button" data-translate="partBtn" data-decor="partBtn") Взяти участь
+                        .slide__info-btn.btn.btn-quest.hide(role="button" data-translate="questBtn" data-decor="questBtn") Пройти квест
+                        a(href="/live-casino/show-game/pragmaticplaylive/one-blackjack/?playMode=real" role="button" data-translate="playBtn" data-decor="playBtn").slide__info-btn.btn.play-btn.hide Грати
                     .slide__progress
                         span.slide__progress-top
                             span.slide__progress-title(data-translate="progress") прогрес
-                            span.slide__progress-text #[span.current-progress 50]/#[span.total-progress 100 балів]
+                            span.slide__progress-text #[span.current-progress 0]/#[span.total-progress 100 балів]
                         span.slide__progress-bottom
                             span.slide__progress-bar
                     .slide__done
                         .slide__done-title(data-translate="doneTitle") завершений
                         .slide__done-wrap
-                            .slide__done-wrap-title(data-translate="doneInfo12-2" data-decor="ти виконав квест #1").title ти виконав квест #1
+                            .slide__done-wrap-title(data-translate="doneInfo12-2" data-decor="doneInfo12-2").title ти виконав квест #1
                             .slide__done-wrap-text(data-translate="doneDate12") Бонус буде нарахований 04.03.2024.
                     .slide__lock
                         .slide__lock-title(data-translate="lockTitle") закритий
                         .slide__lock-wrap
                             .slide__lock-wrap-text(data-translate="lockDate12") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            //a(href="#").slide__lock-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
                     .slide__undone
                         .slide__undone-title(data-translate="undoneTitle") не виконав
                         .slide__undone-wrap
                             .slide__undone-wrap-text(data-translate="lockDate") Цей квест розпочнеться 28.07.2024.
-                            a(href="#").slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
+                            .slide__undone-wrap-btn #[span.btn-decor(data-translate="lockBtn") Виконати актуальний квест]
     .table
-        .table__title.title(data-translate="tableTitle" data-decor="турнірна таблиця") турнірна таблиця
+        .table__title.title(data-translate="tableTitle" data-decor="tableTitle") турнірна таблиця
             .glitch__layers
-                .glitch__layer(data-decor="турнірна таблиця")
-                .glitch__layer(data-decor="турнірна таблиця")
-                .glitch__layer(data-decor="турнірна таблиця")
+                .glitch__layer(data-decor="tableTitle")
+                .glitch__layer(data-decor="tableTitle")
+                .glitch__layer(data-decor="tableTitle")
         .table__subtitle.subtitle(data-translate="tableSubtitle") набирай 100 балів та гарантовано отримає 100 фріспінів у грі ХХХ від провайдера ХХХ
         .table__btn-wrap
             .table__btn #[span.table__btn-text(data-translate="tableBtnPopup") Таблиця розподілу призів]
@@ -1681,249 +1702,83 @@ button.en-lng en
                     .table__head-item(data-translate="tableId") ID
                     .table__head-item(data-translate="tablePoints") Бали
                     .table__head-item(data-translate="tablePrize") Приз
-                .table__row.gold
-                    .table__row-item 1
-                    .table__row-item 23334
-                    .table__row-item 12003
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row.silver
-                    .table__row-item 2
-                    .table__row-item 23334
-                    .table__row-item 3242
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row.bronze
-                    .table__row-item 3
-                    .table__row-item 23334
-                    .table__row-item 234
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 4
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 5
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 6
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 7
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 8
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 9
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 10
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 10
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 10
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 10
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 10
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 10
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-            .table__item
-                .table__head
-                    .table__head-item(data-translate="tablePlace") Місце
-                    .table__head-item(data-translate="tableId") ID
-                    .table__head-item(data-translate="tablePoints") Бали
-                    .table__head-item(data-translate="tablePrize") Приз
-                .table__row.gold
-                    .table__row-item 1
-                    .table__row-item 23334
-                    .table__row-item 12003
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row.silver
-                    .table__row-item 2
-                    .table__row-item 23334
-                    .table__row-item 3242
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row.bronze
-                    .table__row-item 3
-                    .table__row-item 23334
-                    .table__row-item 234
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 4
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 5
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 6
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 7
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 8
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 9
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 10
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-            .table__item
-                .table__head
-                    .table__head-item(data-translate="tablePlace") Місце
-                    .table__head-item(data-translate="tableId") ID
-                    .table__head-item(data-translate="tablePoints") Бали
-                    .table__head-item(data-translate="tablePrize") Приз
-                .table__row.gold
-                    .table__row-item 1
-                    .table__row-item 23334
-                    .table__row-item 12003
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row.silver
-                    .table__row-item 2
-                    .table__row-item 23334
-                    .table__row-item 3242
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row.bronze
-                    .table__row-item 3
-                    .table__row-item 23334
-                    .table__row-item 234
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 4
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 5
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 6
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 7
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 8
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 9
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 10
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-            .table__item
-                .table__head
-                    .table__head-item(data-translate="tablePlace") Місце
-                    .table__head-item(data-translate="tableId") ID
-                    .table__head-item(data-translate="tablePoints") Бали
-                    .table__head-item(data-translate="tablePrize") Приз
-                .table__row.gold
-                    .table__row-item 1
-                    .table__row-item 23334
-                    .table__row-item 12003
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row.silver
-                    .table__row-item 2
-                    .table__row-item 23334
-                    .table__row-item 3242
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row.bronze
-                    .table__row-item 3
-                    .table__row-item 23334
-                    .table__row-item 234
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 4
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 5
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 6
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 7
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 8
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 9
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
-                .table__row
-                    .table__row-item 10
-                    .table__row-item 23334
-                    .table__row-item 100
-                    .table__row-item.magenta 50 000 ЕГЗ*
+                .table__body#top-users
+                    .table__row.gold
+                        .table__row-item 1
+                        .table__row-item 23334
+                        .table__row-item 12003
+                        .table__row-item.magenta 50 000 ЕГЗ*
+                    .table__row.silver
+                        .table__row-item 2
+                        .table__row-item 23334
+                        .table__row-item 3242
+                        .table__row-item.magenta 50 000 ЕГЗ*
+                    .table__row.bronze
+                        .table__row-item 3
+                        .table__row-item 23334
+                        .table__row-item 234
+                        .table__row-item.magenta 50 000 ЕГЗ*
+                    .table__row
+                        .table__row-item 4
+                        .table__row-item 23334
+                        .table__row-item 100
+                        .table__row-item.magenta 50 000 ЕГЗ*
+                    .table__row
+                        .table__row-item 5
+                        .table__row-item 23334
+                        .table__row-item 100
+                        .table__row-item.magenta 50 000 ЕГЗ*
+                    .table__row
+                        .table__row-item 6
+                        .table__row-item 23334
+                        .table__row-item 100
+                        .table__row-item.magenta 50 000 ЕГЗ*
+                    .table__row
+                        .table__row-item 7
+                        .table__row-item 23334
+                        .table__row-item 100
+                        .table__row-item.magenta 50 000 ЕГЗ*
+                    .table__row
+                        .table__row-item 8
+                        .table__row-item 23334
+                        .table__row-item 100
+                        .table__row-item.magenta 50 000 ЕГЗ*
+                    .table__row
+                        .table__row-item 9
+                        .table__row-item 23334
+                        .table__row-item 100
+                        .table__row-item.magenta 50 000 ЕГЗ*
+                    .table__row
+                        .table__row-item 10
+                        .table__row-item 23334
+                        .table__row-item 100
+                        .table__row-item.magenta 50 000 ЕГЗ*
+                    .table__row
+                        .table__row-item 10
+                        .table__row-item 23334
+                        .table__row-item 100
+                        .table__row-item.magenta 50 000 ЕГЗ*
+                    .table__row
+                        .table__row-item 10
+                        .table__row-item 23334
+                        .table__row-item 100
+                        .table__row-item.magenta 50 000 ЕГЗ*
+                    .table__row
+                        .table__row-item 10
+                        .table__row-item 23334
+                        .table__row-item 100
+                        .table__row-item.magenta 50 000 ЕГЗ*
+                    .table__row
+                        .table__row-item 10
+                        .table__row-item 23334
+                        .table__row-item 100
+                        .table__row-item.magenta 50 000 ЕГЗ*
+                    .table__row
+                        .table__row-item 10
+                        .table__row-item 23334
+                        .table__row-item 100
+                        .table__row-item.magenta 50 000 ЕГЗ*
+
         .table__bottom(data-translate="tableBottom") *Під ЕГЗ мається на увазі отримання призу у вигляді електронних грошових замінників в Акції «Прокачай свою гру на 20 мільйонів». Деталі на сайті www.favbet.ua. Період дії акції з 01.10.2024 по 15.10.2024 року.
         .table__pers
             picture
@@ -1931,11 +1786,11 @@ button.en-lng en
                 source(srcset="https://fav-prom.com/html/level-up-game-ua/img/table/zeus-mob.png" media="(max-width: 600px)")
                 img(src="https://fav-prom.com/html/level-up-game-ua/img/table/zeus.png" alt="favbet")
     .prize
-        .prize__title.title(data-translate="prizeTitle" data-decor="Фізичні призи") Фізичні призи
+        .prize__title.title(data-translate="prizeTitle" data-decor="prizeTitle") Фізичні призи
             .glitch__layers
-                .glitch__layer(data-decor="Фізичні призи")
-                .glitch__layer(data-decor="Фізичні призи")
-                .glitch__layer(data-decor="Фізичні призи")
+                .glitch__layer(data-decor="prizeTitle")
+                .glitch__layer(data-decor="prizeTitle")
+                .glitch__layer(data-decor="prizeTitle")
         .prize__subtitle.subtitle(data-translate="prizeSubtitle") Cеред усіх, хто набере хх балів, хоча б в 1 із 4х турнірхних таблиць будуть розіграні фізичні призи такі як...
         .prize__slider
             .prize__icons-wrap
@@ -1955,7 +1810,7 @@ button.en-lng en
                             source(srcset="https://fav-prom.com/html/level-up-game-ua/img/prize/slide1/prize-mob.png" media="(max-width: 600px)")
                             img(src="https://fav-prom.com/html/level-up-game-ua/img/prize/slide1/prize.png" alt="favbet")
                     .prize__slide-info
-                        .prize__slide-info-title(data-translate="prizePsTitle" data-decor="“Sony PlayStation 5 Slim (BluRay)” (з подарунковою грою “Mortal Kombat 1” та бездротовим геймпадом Dualsense White”)") Ігрова приставка Sony PlayStation 5 Slim (BluRay) + Mortal Kombat 1 + Dualsense White
+                        .prize__slide-info-title(data-translate="prizePsTitle" data-decor="prizePsTitle") Ігрова приставка Sony PlayStation 5 Slim (BluRay) + Mortal Kombat 1 + Dualsense White
                         .prize__slide-info-subtitle(data-translate="prizePsSubtitle") Ігрова приставка Sony PlayStation 5 Slim
                         .prize__slide-info-text(data-translate="prizeCounter3") Розігруємо: 9шт
                         .prize__slide-info-btn
@@ -1977,7 +1832,7 @@ button.en-lng en
                             source(srcset="https://fav-prom.com/html/level-up-game-ua/img/prize/slide2/prize-mob.png" media="(max-width: 600px)")
                             img(src="https://fav-prom.com/html/level-up-game-ua/img/prize/slide2/prize.png" alt="favbet")
                     .prize__slide-info
-                        .prize__slide-info-title(data-translate="prizeIphoneTitle" data-decor="Apple iPhone 15 Pro Max 512GB (Black Titanium) (e-Sim)") Apple iPhone 15 Pro Max 512GB
+                        .prize__slide-info-title(data-translate="prizeIphoneTitle" data-decor="prizeIphoneTitle") Apple iPhone 15 Pro Max 512GB
                         .prize__slide-info-subtitle( data-translate="prizeIphoneSubtitle" ) Apple iPhone 15 Pro Max 512GB
                         .prize__slide-info-text(data-translate="prizeCounter1") Розігруємо: 9шт
                         .prize__slide-info-btn
@@ -1999,7 +1854,7 @@ button.en-lng en
                             source(srcset="https://fav-prom.com/html/level-up-game-ua/img/prize/slide3/prize-mob.png" media="(max-width: 600px)")
                             img(src="https://fav-prom.com/html/level-up-game-ua/img/prize/slide3/prize.png" alt="favbet")
                     .prize__slide-info
-                        .prize__slide-info-title(data-translate="prizeLaptopTitle" data-decor="Ноутбук моделі Lenovo Legion") Ноутбук игровий Lenovo Legion 5
+                        .prize__slide-info-title(data-translate="prizeLaptopTitle" data-decor="prizeLaptopTitle") Ноутбук игровий Lenovo Legion 5
                         .prize__slide-info-subtitle( data-translate="prizeLaptopSubtitle" ) Ноутбук игровий Lenovo Legion 5
                         .prize__slide-info-text(data-translate="prizeCounter2") Розігруємо: 9шт
                         .prize__slide-info-btn
@@ -2021,7 +1876,7 @@ button.en-lng en
                             source(srcset="https://fav-prom.com/html/level-up-game-ua/img/prize/slide4/prize-mob.png" media="(max-width: 600px)")
                             img(src="https://fav-prom.com/html/level-up-game-ua/img/prize/slide4/prize.png" alt="favbet")
                     .prize__slide-info
-                        .prize__slide-info-title(data-translate="prizeTvTitle" data-decor="Телевізор “Sony KD50X75WL”") Телевізор Sony KD50X75WL
+                        .prize__slide-info-title(data-translate="prizeTvTitle" data-decor="prizeTvTitle") Телевізор Sony KD50X75WL
                         .prize__slide-info-subtitle( data-translate="prizeTvSubtitle" ) Телевізор Sony KD50X75WL
                         .prize__slide-info-text(data-translate="prizeCounter2") Розігруємо: 9шт
                         .prize__slide-info-btn
@@ -2043,7 +1898,7 @@ button.en-lng en
                             source(srcset="https://fav-prom.com/html/level-up-game-ua/img/prize/slide5/prize-mob.png" media="(max-width: 600px)")
                             img(src="https://fav-prom.com/html/level-up-game-ua/img/prize/slide5/prize.png" alt="favbet")
                     .prize__slide-info
-                        .prize__slide-info-title(data-translate="prizeEcoflowTitle" data-decor="Зарядна система моделі EcoFlow RIVER 2 Max") Зарядна станція EcoFlow RIVER 2 Max
+                        .prize__slide-info-title(data-translate="prizeEcoflowTitle" data-decor="prizeEcoflowTitle") Зарядна станція EcoFlow RIVER 2 Max
                         .prize__slide-info-subtitle(data-translate="prizeEcoflowSubtitle" ) Зарядна станція EcoFlow RIVER 2 Max
                         .prize__slide-info-text(data-translate="prizeCounter2") Розігруємо: 9шт
                         .prize__slide-info-btn
@@ -2060,8 +1915,8 @@ button.en-lng en
                 .prize__move-left
                 .prize__move-right
         .prize__btn-wrap
-            a(href="/casino/" role="button" data-translate="casinoBtn" data-decor="Грати в казино").prize__btn.btn Грати в казино
-            a(href="/sports/sport/soccer/" role="button" data-translate="sportBtn" data-decor="Ставити на спорт").prize__btn.btn ставити на спорт
+            a(href="/casino/" role="button" data-translate="casinoBtn" data-decor="casinoBtn").prize__btn.btn Грати в казино
+            a(href="/sports/sport/soccer/" role="button" data-translate="sportBtn" data-decor="sportBtn").prize__btn.btn ставити на спорт
     .drop
         details.dropdown
             summary(data-translate="rulesTitle") Детальні правила акції
@@ -2089,7 +1944,7 @@ button.en-lng en
     .popups
         .popups__close
         .popups__table
-            .popups__table-title(data-translate="popupTableTitle" data-decor="Таблиця розподілу призів").title Таблиця розподілу призів
+            .popups__table-title(data-translate="popupTableTitle" data-decor="popupTableTitle").title Таблиця розподілу призів
             .popups__table-body
                 .popups__table-scroll-wrap
                     .popups__table-column
@@ -2160,6 +2015,6 @@ button.en-lng en
                     source(srcset="https://fav-prom.com/html/level-up-game-ua/img/popup-done-pers-mob.png" media="(max-width: 600px)")
                     img(src="https://fav-prom.com/html/level-up-game-ua/img/popup-done-pers.png" alt="favbet")
             //doneInfo,doneInfo2,doneInfo3....doneInfo12
-            .popups__done-title(data-translate="doneInfo" data-decor="Ти виконав квест #1").title Ти виконав квест #1
+            .popups__done-title(data-translate="doneInfo" data-decor="doneInfo").title Ти виконав квест #1
             //doneDate,doneDate2,doneDate3....doneDate12
             .popups__done-text(data-translate="doneDate") 3.10. Бонус буде нарахований 04.03.2024.

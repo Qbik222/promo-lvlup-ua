@@ -1114,6 +1114,8 @@ body.light
             line-height: 24px
             font-family: $font-handjet-reg
             max-width: 280px
+            p
+              font-family: inherit
         &-btn
           color: $white
           transform: rotate(2deg)
@@ -1220,7 +1222,7 @@ body.light
           height: 15px
           background:  rgba($white, .3) url("https://fav-prom.com/html/level-up-game-ua/img/quests/progress-thumb.png") no-repeat 0 0/cover
         &-bar
-          width: 50%
+          width: 0%
           min-width: 1%
           max-width: 100%
           position: absolute
@@ -1583,7 +1585,6 @@ body.light
   &__item
     display: none
     max-height: 308px
-    overflow: auto
     position: relative
     &.active
       display: block
@@ -1642,6 +1643,7 @@ body.light
         background: url("https://fav-prom.com/html/level-up-game-ua/img/table/bronze.png") no-repeat 0 0/contain
     &-item
       color: $white
+      display: flex
       &:nth-child(1)
         min-width: 22px
         text-align: center
@@ -2149,6 +2151,18 @@ body.light
           text-transform: uppercase
           background: url("https://fav-prom.com/html/level-up-game-ua/img/popup-done-text-bg.png") no-repeat 0 0/cover
           background-size: 100% 100%
+
+.you
+  .table__row-item
+    &:nth-of-type(1)
+      color: $magenta
+      &:after
+        content: '(ти)'
+        font-size: 16px
+        @media screen and (max-width: 600px)
+          font-size: 10px
+
+
 .glitch
   overflow: hidden
   img
@@ -2321,3 +2335,9 @@ body.dark
         content: 'SPORT'
     .slide__title.casino:before
       content: 'CASINO'
+  .you
+    .table__row-item
+      &:nth-of-type(1)
+        color: $magenta
+        &:after
+          content: '(you)'
