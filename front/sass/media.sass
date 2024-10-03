@@ -12,6 +12,26 @@
   .guide
     padding-top: 50px
 
+
+@media screen and (max-width: 1400px) and (max-height: 800px)
+  .popups
+    &__table
+      transform: scale(.9)
+      transform-origin: bottom
+
+@media screen and (max-width: 1400px) and (max-height: 720px)
+  .popups
+    &__table
+      transform: scale(.8)
+      transform-origin: center
+
+@media screen and (max-width: 1400px) and (max-height: 680px)
+  .popups
+    &__table
+      transform: scale(.75)
+      transform-origin: center
+      margin-top: 50px
+
 @media screen and (max-width: 1300px)
   ._container
     max-width: 1050px
@@ -664,6 +684,7 @@
         margin-top: 15px
         order: 4
         justify-content: space-between
+        margin: 20px 0 0 0
     &__list
       min-width: 340px
       max-width: 340px

@@ -344,6 +344,7 @@ body.light
       font-family: $font-handjet-light
       font-size: 17px
       line-height: 24px
+      padding-right: 5px
       &:not(:first-child)
         margin-top: 15px
     &-scroll
@@ -352,6 +353,13 @@ body.light
       flex-direction: column
       max-height: 155px
       margin-top: 15px
+      scrollbar-width: auto
+      &::-webkit-scrollbar
+        background-color: $white
+        width: 3px
+      &::-webkit-scrollbar-thumb
+        background-color: $magenta
+        width: 3px
     &-close
       width: 54px
       height: 58px
@@ -1515,6 +1523,13 @@ body.light
       overflow-y: scroll
       overflow-x: hidden
       max-height: 160px
+      scrollbar-width: auto
+      &::-webkit-scrollbar
+        background-color: $white
+        width: 3px
+      &::-webkit-scrollbar-thumb
+        background-color: $magenta
+        width: 3px
     &-close
       width: 54px
       height: 58px
@@ -1781,7 +1796,8 @@ body.light
         display: block
     &::before
       content: ""
-      display: block
+      //display: block
+      display: none
       position: absolute
       top: 0
       left: 0
@@ -1863,6 +1879,7 @@ body.light
       &::before
         opacity: 1
         transition: none
+        display: block
       .prize__slide
         &-info
           background: transparent
