@@ -1374,6 +1374,11 @@ body.light
         .slide
           &__undone
             display: flex
+      &._lock, &._undone, &._done
+        .btn-quest
+          filter: grayscale(1)
+          pointer-events: none
+          cursor: default
       &._lock, &._undone
         .slide
           &__lock, &__undone
