@@ -1442,6 +1442,16 @@ body.light
   max-width: 740px
   position: relative
   padding-bottom: 150px
+  &__body
+    max-height: 285px
+    overflow-y: auto
+    scrollbar-width: auto
+    &::-webkit-scrollbar
+      background-color: $white
+      width: 3px
+    &::-webkit-scrollbar-thumb
+      background-color: $magenta
+      width: 3px
   &::before
     content: ""
     display: block

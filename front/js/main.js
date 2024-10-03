@@ -13,7 +13,7 @@
         questIcons = document.querySelectorAll('.quests__icons-item'),
         topResultsTable = document.getElementById('top-users');
 
-    let locale = 'en';
+    let locale = 'uk';
 
     const ukLeng = document.querySelector('#ukLeng');
     const enLeng = document.querySelector('#enLeng');
